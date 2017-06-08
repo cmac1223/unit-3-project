@@ -8,7 +8,7 @@
     "heroku-postbuild": "node_modules/.bin/webpack --progress"
   },
   "dependencies": {
-  "angular": "^1.6.4",
+    "angular": "^1.6.4",
     "angular-messages": "^1.6.4",
     "angular-ui-router": "^1.0.3",
     "babel-core": "^6.24.1",
@@ -25,6 +25,7 @@
     "html-loader": "^0.4.5",
     "mongoose": "^4.10.5",
     "morgan": "~1.8.1",
+    "path": "^0.12.7",
     "serve-favicon": "~2.4.2",
     "webpack": "^2.6.1"
   }
