@@ -4,11 +4,11 @@ function UsersService($http) {
     var self = this;
     
     self.getAllUsers = function () {
-        return $http.get('/');
+        return $http.get('/users');
     }
 
     self.addNewUser = function (newUser) {
-        return $http.post('/', newUser);
+        return $http.post('/users', newUser);
     }
 
 }
