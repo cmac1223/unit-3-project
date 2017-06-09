@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/users');
+var User = require('../models/user');
 
 console.log('hello');
 
@@ -10,7 +10,7 @@ console.log('hello');
 // });
 
 
-router.get('/users', (request, response) => {
+router.get('/', (request, response) => {
 
   // Find all of the Users from the database
   User.find({}).exec(function (error, users) {
@@ -44,7 +44,7 @@ router.get('/:userId', function (request, response) {
 
 console.log('before post function')
 
-router.post('/users', (request, response) => {
+router.post('/', (request, response) => {
 
   // grab the new User info from the request
   let userFromRequest = request.body;
