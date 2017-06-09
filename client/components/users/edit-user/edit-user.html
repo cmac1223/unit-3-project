@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <form ng-submit="$ctrl.updateUserInformation($ctrl.userToUpdate._id)">
+                <div>First Name <input type="text" ng-model="$ctrl.userToUpdate.first_name"></div>
+                <div>Last Name <input type="text" ng-model="$ctrl.userToUpdate.last_name"></div>
+                <div>User Name <input type="text" ng-model="$ctrl.userToUpdate.username"></div>
+                <div>Email<input type="text" ng-model="$ctrl.userToUpdate.email"></div>
+                <div><input class="btn" type="submit" value="Update User Entry"></div>
+            </form>
+        </div>
+    </div>
+</div>
