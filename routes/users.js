@@ -2,10 +2,12 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 
+console.log('hello');
+
 /* GET users listing. */
-router.get('/users', function (request, response, next) {
-  response.send('respond with a resource');
-});
+// router.get('/', function (request, response, next) {
+//   response.send('respond with a resource');
+// });
 
 
 router.get('/users', (request, response) => {
@@ -25,20 +27,22 @@ router.get('/users', (request, response) => {
 
 })
 
-// router.get('/:userId', function (request, response) {
+router.get('/:userId', function (request, response) {
 
-//     const userIdToShow = request.params.userId;
+    const userIdToShow = request.params.userId;
 
-//     User.findById(userIdToShow, function (error, foundUser) {
-//         if (error) {
-//             console.log('Error finding User with ID of ' + userIdToShow);
-//             return;
-//         }
+    User.findById(userIdToShow, function (error, foundUser) {
+        if (error) {
+            console.log('Error finding User with ID of ' + userIdToShow);
+            return;
+        }
 
-//         response.send(foundUser);
-//     });
+        response.send(foundUser);
+    });
 
-// });
+});
+
+console.log('before post function')
 
 router.post('/users', (request, response) => {
 
@@ -61,7 +65,7 @@ router.post('/users', (request, response) => {
       console.log(error);
       return;
     }
-
+    console.log(newUser);
     // once the new user has been saved, return it to the client
     response.send(newUser);
   });

@@ -1,4 +1,3 @@
-require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,13 +5,26 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI); 
-
-var index = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
+
+// view engine setup
+// app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Add local environment config
+require('dotenv').config();
+
+// Mongoose stuff
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGODB_URI);
 
 // Now that we're connected, let's save that connection to the database in a variable.
 var db = mongoose.connection;
@@ -27,19 +39,12 @@ db.once('open', function() {
   console.log("database has been connected!");
 });
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
+// routers to be used
+var index = require('./routes/index');
 app.use('/', index);
+
+var users = require('./routes/users.js');
 app.use('/users', users);
 
 // catch 404 and forward to error handler

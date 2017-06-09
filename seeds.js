@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/trivia-trainer');
 
-var User = require("./models/users");
+var User = require("./models/user");
 
 //use native promises
 mongoose.Promise = global.Promise;
