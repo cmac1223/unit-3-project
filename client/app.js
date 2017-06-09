@@ -1,40 +1,40 @@
-const angular = require('angular');
 require('angular-ui-router');
+require('angular-messages');
+const angular = require('angular');
 
-angular.module('trivia-trainer', ['ui.router'])
-.config(uiRouterSetup);
-// Set up your UI Router HERE
+angular.module('trivia-trainer', ['ui.router', 'ngMessages']).config(uiRouterSetup);
 
 uiRouterSetup.$inject = ['$stateProvider', '$urlRouterProvider'];
+function uiRouterSetup($stateProvider, $urlRouterProvider) {
+    $stateProvider
+        .state('/users', {
+            url: '/users',
+            template: '<users></users>'
+        });
+        // .state('show_credit/:creditId', {
+        //     url: '/show_credit/:creditId',
+        //     params: [ 'creditId' ],
+        //     template: '<show-credit></show-credit>'
+        // })
+        // .state('edit_credit/:creditId', {
+        //     url: '/edit_credit/:creditId',
+        //     params: [ 'creditId' ],
+        //     template: '<edit-credit></edit-credit>'
+        // })
+        // .state('expenses', {
+        //     url: '/expenses',
+        //     template: '<expenses></expenses>'
+        // })
+        // .state('show_expense/:expenseId', {
+        //     url: '/show_expense/:expenseId',
+        //     params: [ 'expenseId' ],
+        //     template: '<show-expense></show-expense>'
+        // })
+        // .state('edit_expense/:expenseId', {
+        //     url: '/edit_expense/:expenseId',
+        //     params: [ 'expenseId' ],
+        //     template: '<edit-expense></edit-expense>'
+        // });
 
-// function uiRouterSetup($stateProvider, $urlRouterProvider) {
-//  	$stateProvider
-// 		.state('home', {
-// 			url: '/',
-// 			template: '<home></home>'
-// 		})
-		// .state('quotes', {
-		// 	url: '/quotes',
-		// 	template: '<quotes></quotes>'
-		// });
-// 		.state('criminals', {
-// 			url: '/criminals',
-// 		//if components name is 2 words such as CriminalsShow
-// 		//it will be camel case in the component, but here it will be with a hyphen. criminals-show
-// 			template: '<criminals></criminals>'
-// 		})
-// 		.state('criminalsNew', {
-// 			url: '/criminals/new',
-// 		//if components name is 2 words such as CriminalsShow
-// 		//it will be camel case in the component, but here it will be with a hyphen. criminals-show
-// 			template: '<criminals-new></criminals-new>'
-// 		})
-// 		.state('criminalsShow', {
-// 			url: '/criminals/:criminalId',
-// 		//if components name is 2 words such as CriminalsShow
-// 		//it will be camel case in the component, but here it will be with a hyphen. criminals-show
-// 			template: '<criminals-show></criminals-show>'
-// 		});
-
-	$urlRouterProvider.otherwise('/');
-// }
+    $urlRouterProvider.otherwise('/users');
+}
