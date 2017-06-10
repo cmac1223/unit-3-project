@@ -20,7 +20,7 @@ router.get('/', (request, response) => {
       return;
     }
 
-    // if there are no errors, send the users back as JSON    
+    // if there are no errors, send the users back as JSON
     console.log(users);
     response.send(users);
   })
@@ -69,9 +69,9 @@ router.post('/', (request, response) => {
     response.send(newUser);
   });
 });
-console.log('Testing before update function')
+//console.log('Testing before update function')
  router.patch('/', function (request, response) {
-   console.log('Testing inside of patch function')
+   //console.log('Testing inside of patch function')
 
     let userToUpdate = request.body;
 
@@ -90,21 +90,17 @@ console.log('Testing before update function')
         });
 });
 
-// router.delete('/:userId', function (request, response) {
-
-//     const userIdToDelete = request.params.userId;
-
-//     User.findByIdAndRemove(userIdToDelete).exec(function (error) {
-//         if (error) {
-//             console.log("Error while deleting User with ID of " + userIdToDelete);
-//             return;
-//         }
-
-//         // once the user has been deleted, tell the server everything was successful
-//         response.sendStatus(200);
-//     })
-
-// });
+router.delete('/:userId', function (request, response) {
+    const userIdToDelete = request.params.userId;
+    User.findByIdAndRemove(userIdToDelete).exec(function (error) {
+        if (error) {
+            console.log("Error while deleting User with ID of " + userIdToDelete);
+            return;
+        }
+        // once the user has been deleted, tell the server everything was successful
+        response.sendStatus(200);
+    })
+});
 
 
 module.exports = router;
