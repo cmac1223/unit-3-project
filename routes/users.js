@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 
-console.log('hello');
+//console.log('OK');
 
 /* GET users listing. */
 // router.get('/', function (request, response, next) {
@@ -20,7 +20,7 @@ router.get('/', (request, response) => {
       return;
     }
 
-    // if there are no errors, send the users back as JSON    
+    // if there are no errors, send the users back as JSON
     console.log(users);
     response.send(users);
   })
@@ -52,10 +52,10 @@ router.post('/', (request, response) => {
   // then build a new User model with the info
   // REMEMBER: the new Date will be created by the database
   let newUser = new User({
-    first_name: userFromRequest.first_name,
-    last_name: userFromRequest.last_name,
-    username: userFromRequest.username,
-    email: userFromRequest.email
+      first_name: userFromRequest.first_name,
+      last_name: userFromRequest.last_name,
+      username: userFromRequest.username,
+      email: userFromRequest.email
 
   });
 
@@ -71,40 +71,40 @@ router.post('/', (request, response) => {
   });
 });
 
-// router.patch('/', function (request, response) {
+router.patch('/:userId', function (request, response) {
 
-//     let userToUpdate = request.body;
+    let userToUpdate = request.body;
 
-//     console.log(userToUpdate);
+    console.log(userToUpdate);
 
-//     User.findByIdAndUpdate(userToUpdate._id, userToUpdate, { new: true })
-//         .exec(function (error, updatedUser) {
+    User.findByIdAndUpdate(userToUpdate.id, userToUpdate, { new: true })
+        .exec(function (error, updatedUser) {
 
-//             if (error) {
-//                 console.log("Error while updating User with ID of " + userToUpdate.id);
-//                 return;
-//             }
+            if (error) {
+                console.log("Error while updating User with ID of " + userToUpdate.id);
+                return;
+            }
 
-//             response.send(200);
+            response.send(200);
 
-//         });
-// });
+        });
+});
 
-// router.delete('/:userId', function (request, response) {
+router.delete('/:userId', function (request, response) {
 
-//     const userIdToDelete = request.params.userId;
+    const userIdToDelete = request.params.userId;
 
-//     User.findByIdAndRemove(userIdToDelete).exec(function (error) {
-//         if (error) {
-//             console.log("Error while deleting User with ID of " + userIdToDelete);
-//             return;
-//         }
+    User.findByIdAndRemove(userIdToDelete).exec(function (error) {
+        if (error) {
+            console.log("Error while deleting User with ID of " + userIdToDelete);
+            return;
+        }
 
-//         // once the user has been deleted, tell the server everything was successful
-//         response.sendStatus(200);
-//     })
+        // once the user has been deleted, tell the server everything was successful
+        response.sendStatus(200);
+    })
 
-// });
+});
 
 
 module.exports = router;
