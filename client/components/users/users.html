@@ -15,7 +15,7 @@
   <ol>
     <li ng-repeat='users in $ctrl.userEntries'>
       <h4>{{users.username}}</h4>
-       <a ui-sref='show_user/:userId'><button>X</button></a>
+       <button class="btn" ng-click="$ctrl.showUser(users._id)">X</button>
     </li>
   </ol>
 </section>

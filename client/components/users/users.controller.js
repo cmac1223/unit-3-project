@@ -68,25 +68,10 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             });
     };
 
-    vm.showShow = function (showId) {
-        $state.go('show_show/:showId', { showId: showId });
+ vm.showUser = function (userId) {
+        $state.go('show_user/:userId', { userId: userId });
     }
 
-    // this function can be used to clear the shows form
-    function resetForm() {
-        vm.newShowAmount = '';
-        vm.newShowNote = '';
-    }
-
-    vm.totalShows = function () {
-        if (vm.showEntries) {
-            let totalShows = vm.showEntries.reduce(function (totalShows, showEntry) {
-                return totalShows + showEntry.amount;
-            }, 0)
-
-            return totalShows;
-        }
-    }
-};
-
+}
+ 
 module.exports = UsersController;

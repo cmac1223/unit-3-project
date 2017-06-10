@@ -13,7 +13,7 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
         })
         .state('show_user/:userId', {
             url: '/show_user/:userId',
-            params: [ 'userId' ],
+            params: ['showId'],
             template: '<show-user></show-user>'
         });
         // .state('edit_show/:showId', {
@@ -36,5 +36,5 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
         //     template: '<edit-expense></edit-expense>'
         // });
 
-    $urlRouterProvider.otherwise('/users');
+    $urlRouterProvider.otherwise('/');
 }

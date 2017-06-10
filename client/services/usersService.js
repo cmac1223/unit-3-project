@@ -11,8 +11,8 @@ function UsersService($http) {
         return $http.post('/users', newUser);
     }
 
-    self.getSingleUserById = function (userId) {
-        return $http.get('users/' + userId)
+    self.getSingleUserById = function (userIdToShow) {
+        return $http.get('users/' + userIdToShow)
     }
 
 }
