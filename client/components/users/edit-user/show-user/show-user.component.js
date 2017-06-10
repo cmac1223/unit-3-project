@@ -1,4 +1,4 @@
-var showUserTemplate = require('./showUser.html')
+var showUserTemplate = require('./show-user.html')
 var showUserController = require('./showUser.controller')
 
 const ShowUserComponent = {

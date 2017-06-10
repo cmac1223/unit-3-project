@@ -18,5 +18,5 @@ function UsersService($http) {
 }
 
 angular
-    .module('unit-3-project')
+    .module('trivia-trainer')
     .service('UsersService', UsersService);

@@ -7,5 +7,5 @@ let UsersComponent = {
 }
 
 
-angular.module('unit-3-project').component('users', UsersComponent);
+angular.module('trivia-trainer').component('users', UsersComponent);
 

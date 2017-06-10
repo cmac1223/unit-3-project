@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('unit-3-project:server');
+var debug = require('debug')('trivia-trainer:server');
 var http = require('http');
 
 /**

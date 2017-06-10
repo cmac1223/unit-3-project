@@ -2,7 +2,7 @@ require('angular-ui-router');
 require('angular-messages');
 const angular = require('angular');
 
-angular.module('unit-3-project', ['ui.router', 'ngMessages']).config(uiRouterSetup);
+angular.module('trivia-trainer', ['ui.router', 'ngMessages']).config(uiRouterSetup);
 
 uiRouterSetup.$inject = ['$stateProvider', '$urlRouterProvider'];
 function uiRouterSetup($stateProvider, $urlRouterProvider) {
