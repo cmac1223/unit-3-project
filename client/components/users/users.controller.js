@@ -43,7 +43,7 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             email: vm.newUserEmail
         };
 
-            // this function can be used to clear the credits form
+            // this function can be used to clear the shows form
     function resetForm() {
         vm.newUser = '';
 
@@ -67,6 +67,26 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
                 console.log('Error saving new User to database!');
             });
     };
+
+    vm.showShow = function (showId) {
+        $state.go('show_show/:showId', { showId: showId });
+    }
+
+    // this function can be used to clear the shows form
+    function resetForm() {
+        vm.newShowAmount = '';
+        vm.newShowNote = '';
+    }
+
+    vm.totalShows = function () {
+        if (vm.showEntries) {
+            let totalShows = vm.showEntries.reduce(function (totalShows, showEntry) {
+                return totalShows + showEntry.amount;
+            }, 0)
+
+            return totalShows;
+        }
+    }
 };
 
 module.exports = UsersController;

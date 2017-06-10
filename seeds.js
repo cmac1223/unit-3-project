@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/trivia-trainer');
+mongoose.connect('mongodb://localhost/unit-3-project');
 
 var User = require("./models/user");
 

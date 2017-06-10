@@ -2,24 +2,24 @@ require('angular-ui-router');
 require('angular-messages');
 const angular = require('angular');
 
-angular.module('trivia-trainer', ['ui.router', 'ngMessages']).config(uiRouterSetup);
+angular.module('unit-3-project', ['ui.router', 'ngMessages']).config(uiRouterSetup);
 
 uiRouterSetup.$inject = ['$stateProvider', '$urlRouterProvider'];
 function uiRouterSetup($stateProvider, $urlRouterProvider) {
     $stateProvider
-        .state('/users', {
+        .state('users', {
             url: '/users',
             template: '<users></users>'
+        })
+        .state('show_user/:userId', {
+            url: '/show_user/:userId',
+            params: [ 'userId' ],
+            template: '<show-user></show-user>'
         });
-        // .state('show_credit/:creditId', {
-        //     url: '/show_credit/:creditId',
-        //     params: [ 'creditId' ],
-        //     template: '<show-credit></show-credit>'
-        // })
-        // .state('edit_credit/:creditId', {
-        //     url: '/edit_credit/:creditId',
-        //     params: [ 'creditId' ],
-        //     template: '<edit-credit></edit-credit>'
+        // .state('edit_show/:showId', {
+        //     url: '/edit_show/:showId',
+        //     params: [ 'showId' ],
+        //     template: '<edit-show></edit-show>'
         // })
         // .state('expenses', {
         //     url: '/expenses',

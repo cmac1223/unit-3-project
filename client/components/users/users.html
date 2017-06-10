@@ -14,8 +14,8 @@
 
   <ol>
     <li ng-repeat='users in $ctrl.userEntries'>
-      {{users.username}}
-       <!--<button ng-click="$ctrl.deleteQuote(quote)">X</button>-->
+      <h4>{{users.username}}</h4>
+       <a ui-sref='show_user/:userId'><button>X</button></a>
     </li>
   </ol>
 </section>
