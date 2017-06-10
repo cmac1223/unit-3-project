@@ -11,8 +11,12 @@ function UsersService($http) {
         return $http.post('/users', newUser);
     }
 
+    self.getSingleUserById = function (userIdToShow) {
+        return $http.get('users/' + userIdToShow)
+    }
+
 }
 
 angular
-    .module('trivia-trainer')
+    .module('unit-3-project')
     .service('UsersService', UsersService);

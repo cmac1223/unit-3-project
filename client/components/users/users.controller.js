@@ -43,7 +43,7 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             email: vm.newUserEmail
         };
 
-            // this function can be used to clear the credits form
+            // this function can be used to clear the shows form
     function resetForm() {
         vm.newUser = '';
 
@@ -67,6 +67,11 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
                 console.log('Error saving new User to database!');
             });
     };
-};
 
+ vm.showUser = function (userId) {
+        $state.go('show_user/:userId', { userId: userId });
+    }
+
+}
+ 
 module.exports = UsersController;
