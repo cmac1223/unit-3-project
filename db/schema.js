@@ -8,14 +8,23 @@ var UserSchema = new Schema({
     first_name: String,
     last_name: String,
     username: String,
-    email: String    
+    email: String,
+    study_guide: [{
+        title: String,
+        questions: [{
+            question: String,
+            answer: String,
+            topic: String,
+            difficulty: String,
+        }]
+    }]
 })
 
-UserSchema.pre('save', function(next) {
+UserSchema.pre('save', function (next) {
     now = new Date();
     this.updatedAt = now;
 
-    if( !this.createdAt ) {
+    if (!this.createdAt) {
         this.createdAt = now;
     }
     next();
@@ -26,6 +35,6 @@ var UserModel = mongoose.model("User", UserSchema);
 //var ExpenseModel = mongoose.model("Expense", ExpenseSchema);
 
 module.exports = {
-  User: UserModel,
-  //Expense: ExpenseModel
+    User: UserModel,
+    //Expense: ExpenseModel
 };
