@@ -36,5 +36,5 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
         //     template: '<edit-expense></edit-expense>'
         // });
 
-    $urlRouterProvider.otherwise('/users');
+    $urlRouterProvider.otherwise('/');
 }

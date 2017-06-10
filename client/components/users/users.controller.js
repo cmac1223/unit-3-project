@@ -8,7 +8,7 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
 
     /**
      * We will run this function the first time we load our component.
-     * 
+     *
      * We can use an 'initialize' function to pre-load some data
      * from the database.
      */
@@ -43,6 +43,12 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             email: vm.newUserEmail
         };
 
+            // this function can be used to clear the credits form
+    function resetForm() {
+        vm.newUser = '';
+
+    }
+
         // Make an ajax call to save the new User to the database:
         UsersService.addNewUser(newUser)
             .then(
@@ -52,9 +58,10 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
                 vm.userEntries.push(newUser);
                 // then reset the form so we can submit more users
                 resetForm();
+
             },
             function failure(response) {
-                // if the http call is not successful, log the error 
+                // if the http call is not successful, log the error
                 // DO NOT clear the form
                 // DO NOT push the new object to the array
                 console.log('Error saving new User to database!');

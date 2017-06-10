@@ -56,7 +56,6 @@ router.post('/', (request, response) => {
     last_name: userFromRequest.last_name,
     username: userFromRequest.username,
     email: userFromRequest.email
-
   });
 
   // save the new User model to the database
@@ -70,25 +69,26 @@ router.post('/', (request, response) => {
     response.send(newUser);
   });
 });
+console.log('Testing before update function')
+ router.patch('/', function (request, response) {
+   console.log('Testing inside of patch function')
 
-// router.patch('/', function (request, response) {
+    let userToUpdate = request.body;
 
-//     let userToUpdate = request.body;
+    console.log(userToUpdate);
 
-//     console.log(userToUpdate);
+    User.findByIdAndUpdate(userToUpdate._id, userToUpdate, { new: true })
+        .exec(function (error, updatedUser) {
 
-//     User.findByIdAndUpdate(userToUpdate._id, userToUpdate, { new: true })
-//         .exec(function (error, updatedUser) {
+            if (error) {
+                console.log("Error while updating User with ID of " + userToUpdate.id);
+                return;
+            }
 
-//             if (error) {
-//                 console.log("Error while updating User with ID of " + userToUpdate.id);
-//                 return;
-//             }
+            response.send(200);
 
-//             response.send(200);
-
-//         });
-// });
+        });
+});
 
 // router.delete('/:userId', function (request, response) {
 

@@ -1,18 +1,29 @@
 <div>
-<section id="users">
-<!-- All your code goes inside this <section> -->
+  <section id="users">
+    <!-- All your code goes inside this <section> -->
 
-  <h1>This is the Users Page</h1>
-  
+    <h1>This is the Users Page</h1>
+
+    <form ng-submit="$ctrl.addNewUser()">
+      <div>First Name<input type="text" ng-model="$ctrl.newUserFirstName" required></div>
+      <div>Last Name <input type="text" ng-model="$ctrl.newUserLastName" required></div>
+      <div>User Name<input type="text" ng-model="$ctrl.newUserUsername"></div>
+      <div>Email<input type="text" ng-model="$ctrl.newEmail"></div>
+      <div><input class="btn" type="submit" value="Add New User"></div>
+    </form>
+
+    <!--<nav class="tabs">
+      <a ui-sref-active="active" ui-sref="home">List</a>
+      <a ui-sref-active="active" ui-sref="archive">Archive</a>
+    </nav>-->
 
 
-  
-  <h3>See All my saved quotes</h3>
-  <ol>
-    <li ng-repeat='users in $ctrl.userEntries'>
-      {{users.username}}
-       <button ng-click="$ctrl.deleteQuote(quote)">X</button>
-    </li>
-  </ol>-->
-</section>
+    <ol>
+      <li ng-repeat='users in $ctrl.userEntries'>
+        {{users.username}}
+        <!--<button ng-click="$ctrl.deleteQuote(quote)">X</button>-->
+
+      </li>
+    </ol>
+  </section>
 </div>

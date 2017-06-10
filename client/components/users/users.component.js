@@ -6,4 +6,6 @@ let UsersComponent = {
     controller: usersController
 }
 
-angular.module('trivia-trainer').component('users', UsersComponent);
+angular
+.module('trivia-trainer')
+.component('users', UsersComponent);
