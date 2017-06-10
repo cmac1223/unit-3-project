@@ -2,7 +2,7 @@ UsersService.$inject = ['$http']
 
 function UsersService($http) {
     var self = this;
-    
+
     self.getAllUsers = function () {
         return $http.get('/users');
     }
@@ -19,6 +19,9 @@ function UsersService($http) {
         return $http.patch('users/', userToUpdate);
     }
 
+    self.deleteIdFromDatabase = function (userIdToDeleteFromDatabase) {
+        return $http.delete('users/' + userIdToDeleteFromDatabase);
+    }
 }
 
 angular

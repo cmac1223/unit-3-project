@@ -93,7 +93,7 @@ console.log('Testing before update function')
         });
 });
 
-router.delete('/:userId', function (request, response) {
+  router.delete('/:userId', function (request, response) {
     const userIdToDelete = request.params.userId;
     User.findByIdAndRemove(userIdToDelete).exec(function (error) {
         if (error) {
