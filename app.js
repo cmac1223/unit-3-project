@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
+ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
@@ -63,7 +63,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error 500 ' + err);
+  res.send('error 500 ' + err);
 });
 
 module.exports = app;

@@ -69,13 +69,16 @@ router.post('/', (request, response) => {
     response.send(newUser);
   });
 });
-//console.log('Testing before update function')
+
+console.log('Testing before update function')
+
+ //Edit user
  router.patch('/', function (request, response) {
    //console.log('Testing inside of patch function')
 
     let userToUpdate = request.body;
 
-    console.log(userToUpdate);
+    console.log('Testing to see what userToUpdate is ' + userToUpdate);
 
     User.findByIdAndUpdate(userToUpdate._id, userToUpdate, { new: true })
         .exec(function (error, updatedUser) {
