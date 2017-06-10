@@ -1,6 +1,8 @@
 <div class="container">
-    <h1>Show User Page</h1>
-    <h3>{{$ctrl.userEntry._id}}</h3>
+    <h1>{{$ctrl.userEntry.username}}'s Trivia Trainer Page</h1>
+    <h3>ID: {{$ctrl.userEntry._id}}</h3>
+    <h3>Name: {{$ctrl.userEntry.first_name}} {{$ctrl.userEntry.last_name}}</h3>
+    <h3>Email: {{$ctrl.userEntry.email}}</h3>
     <!--<div class="card">
         <div class="card-content">
             <h3>Amount: {{$ctrl.userEntry.amount}}</h3>
