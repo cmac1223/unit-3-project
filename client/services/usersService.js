@@ -15,6 +15,10 @@ function UsersService($http) {
         return $http.get('users/' + userIdToShow)
     }
 
+    self.updateSingleUser = function (userToUpdate) {
+        return $http.patch('users/', userToUpdate);
+    }
+
 }
 
 angular

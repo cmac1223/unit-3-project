@@ -1,14 +1,25 @@
 <div class="container">
-    <h1>{{$ctrl.userEntry.username}}'s Trivia Trainer Page</h1>
-    <h3>ID: {{$ctrl.userEntry._id}}</h3>
-    <h3>Name: {{$ctrl.userEntry.first_name}} {{$ctrl.userEntry.last_name}}</h3>
-    <h3>Email: {{$ctrl.userEntry.email}}</h3>
-    <!--<div class="card">
-        <div class="card-content">
-            <h3>Amount: {{$ctrl.userEntry.amount}}</h3>
-            <h3>Note: {{$ctrl.userEntry.note}}</h3>
-            <h3>Created At: {{$ctrl.userEntry.createdAt}}</h3>
-            <button class="btn" ng-click="$ctrl.editUserEntry($ctrl.userEntry._id)">Edit</button>
+    <h2>{{$ctrl.userEntry.username}}'s Trivia Trainer Page</h2>
+    <p>ID: {{$ctrl.userEntry._id}}</p>
+    <p>Name: {{$ctrl.userEntry.first_name}} {{$ctrl.userEntry.last_name}}</p>
+    <p>Email: {{$ctrl.userEntry.email}}</p>
+    <button class="btn" ng-click="visible = true">Edit</button>
+    <!--<button class="btn" ng-click="$ctrl.editUserEntry($ctrl.userEntry._id)">Delete</button>-->
+
+  
+    <div ng-show="visible" class="container">
+        <div class="card">
+            <div class="card-content">
+                <form ng-submit="$ctrl.updateUserInformation($ctrl.userToUpdate._id)">
+                    <div>First Name <input type="text" ng-model="$ctrl.userToUpdate.first_name"></div>
+                    <div>Last Name <input type="text" ng-model="$ctrl.userToUpdate.last_name"></div>
+                    <div>User Name <input type="text" ng-model="$ctrl.userToUpdate.username"></div>
+                    <div>Email<input type="text" ng-model="$ctrl.userToUpdate.email"></div>
+                    <div><input class="btn" type="submit" value="Update User Entry"></div>
+                </form>
+            </div>
         </div>
-    </div>-->
+    </div>
+
+
 </div>
