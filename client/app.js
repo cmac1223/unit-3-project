@@ -35,6 +35,10 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
         //     params: [ 'expenseId' ],
         //     template: '<edit-expense></edit-expense>'
         // });
+         .state('trivia', {
+            url: '/trivia',
+            template: '<trivia></trivia>'
+        })
 
     $urlRouterProvider.otherwise('/users');
 }
