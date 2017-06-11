@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 
-console.log('hello');
-
 /* GET users listing. */
 // router.get('/', function (request, response, next) {
 //   response.send('respond with a resource');

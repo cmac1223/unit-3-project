@@ -38,7 +38,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
         // const newStudyGuide = {
         //     first_name: vm.newStudyGuideFirstName,
         //     last_name: vm.newStudyGuideLastName,
-        //     studyguide: vm.newStudyGuideStudyGuidename,
+        //     studyGuide: vm.newStudyGuideStudyGuidename,
         //     email: vm.newStudyGuideEmail
         // };
 
@@ -80,9 +80,11 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
             });
     };
 
+
     vm.showStudyGuide = function (userId) {
         $state.go('study_guide/:userId', { userId: userId });
     }
+
 
 }
 
