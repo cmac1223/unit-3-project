@@ -4,11 +4,7 @@ var Schema = mongoose.Schema;
 // Use native promises
 mongoose.Promise = global.Promise;
 
-var UserSchema = new Schema({
-    first_name: String,
-    last_name: String,
-    username: String,
-    email: String,
+var Study_GuideSchema = new Schema({
     study_guide: [{
         title: String,
         questions: [{
@@ -18,7 +14,17 @@ var UserSchema = new Schema({
             difficulty: String,
         }]
     }]
-})
+
+});
+
+var UserSchema = new Schema({
+    first_name: String,
+    last_name: String,
+    username: String,
+    email: String,
+    study_guide: [Study_GuideSchema],
+
+});
 
 UserSchema.pre('save', function (next) {
     now = new Date();
@@ -32,9 +38,9 @@ UserSchema.pre('save', function (next) {
 
 
 var UserModel = mongoose.model("User", UserSchema);
-//var ExpenseModel = mongoose.model("Expense", ExpenseSchema);
+var Study_GuideModel = mongoose.model("Study_Guide", Study_GuideSchema);
 
 module.exports = {
     User: UserModel,
-    //Expense: ExpenseModel
+    Study_Guide: Study_GuideModel
 };
