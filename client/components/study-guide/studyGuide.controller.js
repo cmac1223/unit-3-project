@@ -23,7 +23,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
             .then(
             function success(response) {
                 // if the call is successful, return the list of study guides
-                vm.studyguideEntries = response.data;
+                vm.studyGuideEntries = response.data;
             },
             function failure(response) {
                 console.log('Error retrieving Study Guide Entries from database!');
@@ -81,7 +81,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
     };
 
     vm.showStudyGuide = function (userId) {
-        $state.go('/study_guide/:userId', { userId: userId });
+        $state.go('study_guide/:userId', { userId: userId });
     }
 
 }
