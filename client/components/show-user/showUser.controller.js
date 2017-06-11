@@ -39,10 +39,8 @@ function ShowUserController($state, $stateParams, UsersService) {
         UsersService.deleteIdFromDatabase(userIdToDeleteFromDatabase)
             .then(
                 function success(response) {
-                    console.log(userIdToDeleteFromDatabase)
 
                     var userIndexToDelete = vm.userEntries.indexOf(userIdToDeleteFromDatabase);
-                    console.log(userIdToDeleteFromDatabase)
                     // only delete the User from the Angular array if
                     // it was successfully deleted from the database
                     vm.userEntries.splice(userIndexToDelete, 1);
@@ -54,6 +52,11 @@ function ShowUserController($state, $stateParams, UsersService) {
                 }
             )
     }
+    
+     vm.showStudyGuide = function (userIdForStudyGuide) {
+        $state.go('study_guide/:userId', { userId: userIdForStudyGuide });
+    }
+
 }
 
 module.exports = ShowUserController;
