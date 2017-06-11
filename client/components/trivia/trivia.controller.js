@@ -19,7 +19,6 @@ function TriviaController(TriviaService) {
 
     // HOW IT DOES STUFF
     function getTrivia() {
-        let visible = true;
         TriviaService.getTrivia()
             .then(function resolve(response) {
                 console.log(response.data);
