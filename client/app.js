@@ -16,11 +16,11 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
             params: ['showId'],
             template: '<show-user></show-user>'
         })
-        // .state('edit_show/:showId', {
-        //     url: '/edit_show/:showId',
-        //     params: [ 'showId' ],
-        //     template: '<edit-show></edit-show>'
-        // })
+        .state('study_guide/:userId', {
+            url: '/study_guide/:userId',
+            params: [ 'userId' ],
+            template: '<study-guide></study-guide>'
+        })
         // .state('expenses', {
         //     url: '/expenses',
         //     template: '<expenses></expenses>'

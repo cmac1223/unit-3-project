@@ -35,16 +35,16 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
     vm.addNewStudyGuide = function () {
 
         // the new StudyGuide object will be created by binding to the form inputs
-        const newStudyGuide = {
-            first_name: vm.newStudyGuideFirstName,
-            last_name: vm.newStudyGuideLastName,
-            studyguide: vm.newStudyGuideStudyGuidename,
-            email: vm.newStudyGuideEmail
-        };
+        // const newStudyGuide = {
+        //     first_name: vm.newStudyGuideFirstName,
+        //     last_name: vm.newStudyGuideLastName,
+        //     studyguide: vm.newStudyGuideStudyGuidename,
+        //     email: vm.newStudyGuideEmail
+        // };
 
         var Study_GuideSchema = new Schema({
             study_guide: [{
-                title: String,
+                title: vm.newStudyGuideTitle,
                 questions: [{
                     question: String,
                     answer: String,
@@ -80,8 +80,8 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
             });
     };
 
-    vm.showStudyGuide = function (studyguideId) {
-        $state.go('show_studyguide/:studyguideId', { studyguideId: studyguideId });
+    vm.showStudyGuide = function (userId) {
+        $state.go('/study_guide/:userId', { userId: userId });
     }
 
 }

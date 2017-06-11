@@ -30,6 +30,7 @@ router.get('/', (request, response) => {
 router.get('/:userId', function (request, response) {
 
     const userIdToShow = request.params.userId;
+    
 
     User.findById(userIdToShow, function (error, foundUser) {
         if (error) {
