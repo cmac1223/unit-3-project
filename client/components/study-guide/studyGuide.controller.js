@@ -7,37 +7,23 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
 
     function initialize() {
 
-        console.log(userIdForStudyGuide);
+        getAllStudyGuidesByUserId();
 
-        // StudyGuidesService.getSingleStudyGuideById(userIdForStudyGuide)
-        //     .then(
-        //     function success(response) {
-        //         vm.studyGuideEntry = response.data;
-
-        //     },
-        //     function failure(response) {
-        //         console.log('Failed to retrieve information for User with ID of ' + userIdForStudyGuide)
-        //     }
-        //     )
     }
     initialize();
 
-    // getAllStudyGuides();
-
-    // function getAllStudyGuides() {
-    //     StudyGuidesService.getAllStudyGuides()
-    //         .then(
-    //         function success(response) {
-    //             // if the call is successful, return the list of study guides
-    //             vm.studyGuideEntries = response.data;
-    //         },
-    //         function failure(response) {
-    //             console.log('Error retrieving Study Guide Entries from database!');
-    //         }
-    //         );
-    // }
-
-    // This function handles our form submission.
+    function getAllStudyGuidesByUserId() {
+        StudyGuidesService.getAllStudyGuidesByUserId(userIdForStudyGuide)
+            .then(
+            function success(response) {
+                // if the call is successful, return the list of study guides
+                 vm.studyGuideList = response.data;
+                 console.log(vm.studyGuideList);
+            },
+            function failure(response) {
+                console.log('Error retrieving User Entries from database!');
+            });
+    }
 
     vm.addNewStudyGuide = function () {
 

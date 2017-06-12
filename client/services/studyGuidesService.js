@@ -3,10 +3,13 @@ StudyGuidesService.$inject = ['$http']
 function StudyGuidesService($http) {
     var self = this;
 
-    self.getAllStudyGuides = function () {
-        console.log();
-        return $http.get('/study_guide/:userId');
-    }
+    self.getAllStudyGuidesByUserId = function (userIdForStudyGuide) {
+        return $http.get('/users/'+userIdForStudyGuide)
+         .then(function (response) {
+                return response;
+            });
+    };
+   
 
     self.addNewStudyGuide = function (userIdForStudyGuide, newStudyGuide) {
         return $http.post('/users/'+userIdForStudyGuide+'/studyGuide/', newStudyGuide);

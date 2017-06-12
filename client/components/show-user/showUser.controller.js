@@ -13,6 +13,7 @@ function ShowUserController($state, $stateParams, UsersService) {
             .then(
             function success(response) {
                 vm.userEntry = response.data;
+                console.log(vm.userEntry);
 
             },
             function failure(response) {

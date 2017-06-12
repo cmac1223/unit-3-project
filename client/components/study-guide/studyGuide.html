@@ -1,10 +1,17 @@
-
 <div>
   <section id="studyGuides">
- 
+
     <!-- All your code goes inside this <section> -->
-  <br>
-    <h1>This is the Users Page</h1>
+    <br>
+    <h1>
+      <h2>{{$ctrl.studyGuideList.username}}'s Study Guide Page</h2>
+    </h1>
+    <br>
+    <ol>
+      <li ng-repeat='studyGuide in $ctrl.studyGuideList.studyGuide'>
+        <h4>{{studyGuide.title}}</h4>
+      </li>
+    </ol>
     <hr>
     <button ng-show='!visible' class="btn" ng-click='visible = true'>Add A New Study Guide</button>
     <div class="card" ng-show='visible'>
