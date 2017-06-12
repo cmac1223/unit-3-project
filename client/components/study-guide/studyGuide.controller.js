@@ -44,7 +44,6 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
                 // only push to the userEntries array if the ajax call is successful
                 const newStudyGuide = response.data;
                 // vm.userEntries.push(newStudyGuide);
-                console.log(newStudyGuide);
                 // then reset the form so we can submit more users
                 resetForm();
 
