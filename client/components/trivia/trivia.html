@@ -9,7 +9,7 @@
   <ul>
     <li>Title: {{$ctrl.trivia.category.title | uppercase}}</li>
     <br>
-    <li>Question: {{$ctrl.trivia.question}}</li>   
+    <li>Question: {{$ctrl.trivia.question}}</li>
     <br>
     <button class="btn" ng-click="visible = !visible">Toggle Answer</button>
     <br>
@@ -22,7 +22,7 @@
 <!--Create Filter:
 
 var app = angular.module('myHDApp', []);
- 
+
 app.filter('removeHTMLTags', function() {
 	return function(text) {
 		return  text ? String(text).replace(/<[^>]+>/gm, '') : '';

@@ -28,7 +28,7 @@ router.get('/', (request, response) => {
 router.get('/:userId', function (request, response) {
 
     const userIdToShow = request.params.userId;
-    
+
 
     User.findById(userIdToShow, function (error, foundUser) {
         if (error) {
@@ -51,10 +51,10 @@ router.post('/', (request, response) => {
   // then build a new User model with the info
   // REMEMBER: the new Date will be created by the database
   let newUser = new User({
-    first_name: userFromRequest.first_name,
-    last_name: userFromRequest.last_name,
-    username: userFromRequest.username,
-    email: userFromRequest.email
+      first_name: userFromRequest.first_name,
+      last_name: userFromRequest.last_name,
+      username: userFromRequest.username,
+      email: userFromRequest.email
   });
 
   // save the new User model to the database

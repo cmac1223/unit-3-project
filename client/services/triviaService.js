@@ -6,7 +6,7 @@ function TriviaService($http) {
     const self = this;
 
     self.getTrivia = function () {
-        return $http.get('//jservice.io/api/random?count=1')
+        return $http.get('http://jservice.io/api/random?count=1')
             .then(function (response) {
                 return response;
             });

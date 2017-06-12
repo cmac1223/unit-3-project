@@ -1,8 +1,53 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image:url('https://static.vecteezy.com/system/resources/previews/000/101/241/non_2x/free-abstract-background-4-vector.jpg');
+  background-size:cover;
+  background-repeart:no-repeat;
+  text-align:center;
+}
+h1 {
+  font-size:80px;
+  font-family:'Baloo', cursive;
+  color: rgb(0, 0, 0);
 }
 
-a {
-  color: #00B7FF;
+h2 {
+    font-size:40px;
+    font-family:'Sansita', cursive;
+    color: rgb(0, 0, 0);
 }
+
+button {
+    Font-size: 20px;
+    background-image: url("http://www.clker.com/cliparts/x/u/B/A/8/Z/white-background-gold-button-hi.png");
+    background-size: cover;
+}
+
+p {
+  font-size:20px;
+  color: black;
+}
+
+form {
+   font-size:20px;
+   color: rgb(0, 0, 0);
+}
+
+button.btn{
+    color: rgb(0, 0, 0);
+}
+
+input.btn {
+    color: rgb(0, 0, 0);
+  }
+
+li {
+    font-size:40px;
+    color: rgb(0, 0, 0);
+}
+input.btn {
+    background: url("http://www.clker.com/cliparts/x/u/B/A/8/Z/white-background-gold-button-hi.png")
+}
+div.name {
+  color: rgb(0, 0, 0);
+}
+

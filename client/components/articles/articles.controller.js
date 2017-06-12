@@ -1,10 +1,11 @@
 ArticlesController.$inject = ['ArticlesService'];
 
 function ArticlesController(ArticlesService) {
+
     const vm = this;
 
     vm.getArticles = getArticles;
-    vm.articles = "";
+    vm.articles = '';
 
     // WHAT THIS CONTROLLER HAS / DOES THAT IS CONNECTED TO THE VIEW
 
@@ -20,8 +21,9 @@ function ArticlesController(ArticlesService) {
         ArticlesService.getArticles()
             .then(function resolve(response) {
                 console.log(response.data);
-                vm.articles = response.data[0];
+                vm.articles = response.data;
             });
+
     }
 
 };

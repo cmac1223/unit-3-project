@@ -1,7 +1,7 @@
-var articlesTemplate = require('./articles.html')
-var articlesController = require('./articles.controller')
+let articlesTemplate = require('./articles.html')
+let articlesController = require('./articles.controller')
 
-const ArticlesComponent = {
+let ArticlesComponent = {
       template: articlesTemplate,
       controller: articlesController
 }

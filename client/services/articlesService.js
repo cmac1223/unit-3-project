@@ -5,7 +5,8 @@ function ArticlesService($http) {
     const self = this;
 
     self.getArticles = function () {
-        return $http.get('https://en.wikipedia.org/w/api.php?format=json&action=query&generator=random&grnnamespace=0&prop=revisions%7Cpageimages&rvprop=content&grnlimit=1')
+        return $http.get("http://forismatic.com/en/39477220ce/")
+
             .then(function (response) {
                 return response;
             });
