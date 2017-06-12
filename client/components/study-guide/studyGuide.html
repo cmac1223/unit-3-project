@@ -7,6 +7,7 @@
         <button class="btn" ng-click='$ctrl.getTrivia()'>Get A Question</button>
     </span>
 
+<<<<<<< HEAD
     <h1>This is the Study Guide Page</h1>
 
     <form ng-submit="$ctrl.getAllStudyGuides()">
@@ -21,4 +22,18 @@
     </li>
   </ol>-->
 </section>
+=======
+    <h1>This is the Users Page</h1>
+    <hr>
+    <button ng-show='!visible' class="btn" ng-click='visible = true'>Add A New Study Guide</button>
+    <div class="card" ng-show='visible'>
+      <div class="card-content">
+        <form ng-submit="$ctrl.addNewStudyGuide()">
+          <div>First Name <input type="text" ng-model="$ctrl.newStudyGuideTitle"></div>
+          <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Create</button>
+        </form>
+      </div>
+    </div>
+  </section>
+>>>>>>> 95642f8a6aad359f5514f3e0fd2ff46f3dcd9e70
 </div>
