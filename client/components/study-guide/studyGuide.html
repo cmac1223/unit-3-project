@@ -3,18 +3,14 @@
   <section id="studyGuides">
  
     <!-- All your code goes inside this <section> -->
-    <span ng-click='visible = false'>
-        <button class="btn" ng-click='$ctrl.getTrivia()'>Get A Question</button>
-    </span>
-
-
+  <br>
     <h1>This is the Users Page</h1>
     <hr>
     <button ng-show='!visible' class="btn" ng-click='visible = true'>Add A New Study Guide</button>
     <div class="card" ng-show='visible'>
       <div class="card-content">
         <form ng-submit="$ctrl.addNewStudyGuide()">
-          <div>First Name <input type="text" ng-model="$ctrl.newStudyGuideTitle"></div>
+          <div>Title <input type="text" ng-model="$ctrl.newStudyGuideTitle"></div>
           <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Create</button>
         </form>
       </div>
