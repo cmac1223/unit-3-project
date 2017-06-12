@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
+var studyGuide = require("../models/studyGuide")
 
 /* GET users listing. */
 // router.get('/', function (request, response, next) {
@@ -25,7 +26,7 @@ router.get('/', (request, response) => {
 
 })
 
-router.get('/:userId', function (request, response) {
+router.get('/:userId/', function (request, response) {
 
     const userIdToShow = request.params.userId;
     
@@ -103,6 +104,10 @@ console.log('Testing before update function')
         response.sendStatus(200);
     })
 });
+
+
+
+
 
 
 module.exports = router;

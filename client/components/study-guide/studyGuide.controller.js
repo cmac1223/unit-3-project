@@ -42,7 +42,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
         //     email: vm.newStudyGuideEmail
         // };
 
-        var Study_GuideSchema = new Schema({
+        var StudyGuideSchema = new Schema({
             study_guide: [{
                 title: vm.newStudyGuideTitle,
                 questions: [{
