@@ -1,86 +1,50 @@
 var express = require('express');
-var router = express.Router();
+var router = express.Router({mergeParams: true});
+var StudyGuide = require('../models/studyGuide');
 var User = require('../models/user');
+var Question = require('../models/question');
 
-console.log('this is the study guide route');
 
-router.get('/:userId', function (request, response) {
 
-    const userIdToShow = request.params.userId;
-    
-    User.findById(userIdToShow, function (error, foundUser) {
-        if (error) {
-            console.log('Error finding User with ID of ' + userIdToShow);
-            return;
-        }
-        console.log('study guide route' +foundUser);
-        response.send(foundUser);
-    });
 
+// ADD A NEW ITEM
+router.post('/', function (request, response) {
+
+    // grab the user ID we want to create a new item for
+    var userId = request.params.userId;
+
+    // then grab the new Item that we created using the form
+    var newStudyGuideTitle = request.body.title;
+
+    // Find the User in the database we want to save the new Item for
+    User.findById(userId)
+        .exec(function (err, user) {
+            console.log(userId);
+
+
+            var newStudyGuide = new StudyGuide(({ title: newStudyGuideTitle }))
+            // add a new Item to the User's list of items, using the data
+            // we grabbed off of the form
+            user.studyGuide.push(newStudyGuide);
+
+            // once we have added the new Item to the user's collection 
+            // of items, we can save the user
+            user.save(function (err) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+
+                // once the user has been saved, we can redirect back 
+                // to the User's show page, and we should see the new item
+                //response.redirect('/restaurants/' + userId);
+                response.send(newStudyGuide);
+            })
+        });
 });
 
-// console.log('before post function')
 
-// router.post('/', (request, response) => {
 
-//   // grab the new User info from the request
-//   let userFromRequest = request.body;
-
-//   // then build a new User model with the info
-//   // REMEMBER: the new Date will be created by the database
-//   let newUser = new User({
-//     first_name: userFromRequest.first_name,
-//     last_name: userFromRequest.last_name,
-//     username: userFromRequest.username,
-//     email: userFromRequest.email
-//   });
-
-//   // save the new User model to the database
-//   newUser.save(function (error, newUser) {
-//     if (error) {
-//       console.log(error);
-//       return;
-//     }
-//     console.log(newUser);
-//     // once the new user has been saved, return it to the client
-//     response.send(newUser);
-//   });
-// });
-
-// console.log('Testing before update function')
-
-//  //Edit user
-//  router.patch('/', function (request, response) {
-//    //console.log('Testing inside of patch function')
-
-//     let userToUpdate = request.body;
-
-//     console.log('Testing to see what userToUpdate is ' + userToUpdate);
-
-//     User.findByIdAndUpdate(userToUpdate._id, userToUpdate, { new: true })
-//         .exec(function (error, updatedUser) {
-
-//             if (error) {
-//                 console.log("Error while updating User with ID of " + userToUpdate.id);
-//                 return;
-//             }
-
-//             response.send(200);
-
-//         });
-// });
-
-//   router.delete('/:userId', function (request, response) {
-//     const userIdToDelete = request.params.userId;
-//     User.findByIdAndRemove(userIdToDelete).exec(function (error) {
-//         if (error) {
-//             console.log("Error while deleting User with ID of " + userIdToDelete);
-//             return;
-//         }
-//         // once the user has been deleted, tell the server everything was successful
-//         response.sendStatus(200);
-//     })
-// });
 
 
 module.exports = router;
