@@ -1,5 +1,6 @@
 <div>
   <section id="studyGuides">
+<<<<<<< HEAD
     <!-- All your code goes inside this <section> -->
 
     <h1>Users Study Guide Page</h1>
@@ -13,15 +14,35 @@
           <div>Email<input type="text" ng-model="$ctrl.newUserEmail"></div>
           <div><input class="btn" type="submit" value="Add New User"></div>-->
     </form>
+=======
 
-  <!--<ol>
-    <li ng-repeat='users in $ctrl.userEntries'>
-      <h4>{{users.username}}</h4>
-       <button class="btn" ng-click="$ctrl.showUser(users._id)">Show User</button>
-    </li>
-  </ol>-->
-</section>
+    <!-- All your code goes inside this <section> -->
+>>>>>>> faa296cb0cfc8b30008e123466867dd8bc0001d8
+
+    <h1>
+      <h2>{{$ctrl.studyGuideList.username}}'s Study Guide Page</h2>
+    </h1>
+    <br>
+    <ol>
+      <li ng-repeat='studyGuide in $ctrl.studyGuideList.studyGuide'>
+        <button class="btn" ng-click="$ctrl.openStudyGuide($ctrl.studyGuideList._id)">{{studyGuide.title}}</button>
+      </li>
+    </ol>
+
+    <hr>
+    <button ng-show='!visible' class="btn" ng-click='visible = true'>Add A New Study Guide</button>
+    <div class="card" ng-show='visible'>
+      <div class="card-content">
+        <form ng-submit="$ctrl.addNewStudyGuide()">
+          <div>Title <input type="text" ng-model="$ctrl.newStudyGuideTitle"></div>
+          <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Create</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+<<<<<<< HEAD
+
+=======
 </div>
-
-
-
+>>>>>>> faa296cb0cfc8b30008e123466867dd8bc0001d8

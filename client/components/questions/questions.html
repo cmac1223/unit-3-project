@@ -1,0 +1,28 @@
+<div>
+  <section id="questions">
+
+    <!-- All your code goes inside this <section> -->
+
+    <h1>
+      <h2>{{$ctrl.studyGuideList.username}}'s Questions Guide Page</h2>
+    </h1>
+    <br>
+    <ol>
+      <li ng-repeat='studyGuide in $ctrl.studyGuideList.studyGuide'>
+        <button class="btn" ng-click="$ctrl.openStudyGuide($ctrl.studyGuideList._id)">{{studyGuide.title}}</button>
+      </li>
+    </ol>
+
+    <hr>
+    <button ng-show='!visible' class="btn" ng-click='visible = true'>Add A New Study Guide</button>
+    <div class="card" ng-show='visible'>
+      <div class="card-content">
+        <form ng-submit="$ctrl.addNewStudyGuide()">
+          <div>Title <input type="text" ng-model="$ctrl.newStudyGuideTitle"></div>
+          <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Create</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>

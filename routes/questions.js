@@ -6,31 +6,40 @@ var User = require('../models/user');
 var Question = require('../models/question');
 
 
-
-
 // ADD A NEW ITEM
 router.post('/', function (request, response) {
 
     // grab the user ID we want to create a new item for
-    var userId = request.params.userId;
+    var studyGuideId = request.params.studyGuideId;
 
     // then grab the new Item that we created using the form
-    var newStudyGuideTitle = request.body.title;
+    var newQuestionQuestion = request.body.question;
+    var newQuestionAnswer = request.body.answer;
+    var newQuestionTopic = request.body.topic;
+    var newQuestionDifficulty = request.body.difficulty
+
 
     // Find the User in the database we want to save the new Item for
     User.findById(userId)
         .exec(function (err, user) {
             console.log(userId);
+            //console.log(studyGuide);
+            console.log(StudyGuide.findById(study))
 
 
-            var newStudyGuide = new StudyGuide(({ title: newStudyGuideTitle }))
+            var newQuestion = new Question(({ 
+                question: newQuestionQuestion,
+                answer: newQuestionAnswer,
+                topic: newQuestionTopic,
+                difficulty: newQuestionDifficulty, 
+         }));
             // add a new Item to the User's list of items, using the data
             // we grabbed off of the form
-            user.studyGuide.push(newStudyGuide);
+            studyGuide.questions.push(newQuestion);
 
             // once we have added the new Item to the user's collection 
             // of items, we can save the user
-            user.save(function (err) {
+            studyGuide.save(function (err) {
                 if (err) {
                     console.log(err);
                     return;
@@ -39,7 +48,7 @@ router.post('/', function (request, response) {
                 // once the user has been saved, we can redirect back 
                 // to the User's show page, and we should see the new item
                 //response.redirect('/restaurants/' + userId);
-                response.send(newStudyGuide);
+                response.send(newQuestion);
             })
         });
 });
