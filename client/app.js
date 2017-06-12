@@ -21,10 +21,11 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
             params: [ 'userId' ],
             template: '<study-guide></study-guide>'
         })
-        // .state('expenses', {
-        //     url: '/expenses',
-        //     template: '<expenses></expenses>'
-        // })
+
+        .state('study_guide/:userId/questions', {
+            url: '/study_guide/:userId/questions',
+            template: '<questions></questions>'
+        })
         // .state('show_expense/:expenseId', {
         //     url: '/show_expense/:expenseId',
         //     params: [ 'expenseId' ],

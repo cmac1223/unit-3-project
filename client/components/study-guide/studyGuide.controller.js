@@ -58,9 +58,9 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
     };
 
 
-    // vm.showStudyGuide = function (userId) {
-    //     $state.go('study_guide/:userId', { userId: userId });
-    // }
+     vm.openStudyGuide = function (userId) {
+         $state.go('study_guide/:userId/questions', { userId: userId });
+     }
 }
 
 module.exports = StudyGuidesController;
