@@ -1,4 +1,5 @@
 var express = require('express');
+// line 3 was needed in order to merge both studyGuide and users route
 var router = express.Router({mergeParams: true});
 var StudyGuide = require('../models/studyGuide');
 var User = require('../models/user');
