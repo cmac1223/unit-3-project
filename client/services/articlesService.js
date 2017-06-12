@@ -1,18 +1,16 @@
-ArticleService.$inject = ['$http']
+ArticlesService.$inject = ['$http'];
 
 function ArticlesService($http) {
-    var self = this;
 
-    self.getAllArticles = function () {
-        return $http.get('/articles');
-    }
+    const self = this;
 
-    self.getSingleArticleById = function (articleIdToShow) {
-        return $http.get('articalss/' + articleIdToShow)
-    }
+    self.getArticles = function () {
+        return $http.get('https://en.wikipedia.org/w/api.php?format=json&action=query&generator=random&grnnamespace=0&prop=revisions%7Cpageimages&rvprop=content&grnlimit=1')
+            .then(function (response) {
+                return response;
+            });
+    };
 
-}
+};
 
-angular
-    .module('trivia-trainer')
-    .service('ArticlesService', ArticlesService);
+angular.module('trivia-trainer').service('ArticlesService', ArticlesService);

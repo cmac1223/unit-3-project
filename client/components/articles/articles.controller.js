@@ -1,10 +1,10 @@
-ArticleController.$inject = ['ArticleService'];
+ArticlesController.$inject = ['ArticlesService'];
 
-function ArticleController(ArticleService) {
+function ArticlesController(ArticlesService) {
     const vm = this;
 
-    vm.getArticle = getArticle;
-    vm.article = '';
+    vm.getArticles = getArticles;
+    vm.articles = "";
 
     // WHAT THIS CONTROLLER HAS / DOES THAT IS CONNECTED TO THE VIEW
 
@@ -12,15 +12,15 @@ function ArticleController(ArticleService) {
     activate();
 
     function activate() {
-        getTrivia();
+        getArticles();
     }
 
     // HOW IT DOES STUFF
-    function getArticle() {
-        ArticleService.getArticle()
+    function getArticles() {
+        ArticlesService.getArticles()
             .then(function resolve(response) {
                 console.log(response.data);
-                vm.article = response.data[0];
+                vm.articles = response.data[0];
             });
     }
 
