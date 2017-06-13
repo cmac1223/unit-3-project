@@ -18,11 +18,10 @@ router.post('/', function (request, response) {
     var newQuestionTopic = request.body.topic;
     var newQuestionDifficulty = request.body.difficulty
 
-    // Find the Study Guide in the database we want to save the new Question for
-    // I changed userId to studyGuideId in lines 23 and 25
-    StudyGuide.findById(studyGuideId)
+    // Find the User in the database we want to save the new Item for
+    User.findById(userId)
         .exec(function (err, user) {
-            console.log('=====studyGuideId', studyGuideId);
+            // console.log(userId);
             //console.log(studyGuide);
             // var userToSearch = (User.findById(userId));
 
@@ -41,7 +40,6 @@ router.post('/', function (request, response) {
                 var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
                     return sg._id == studyGuideId;
                 });
-                //studyGuideSearchResult.questions.push(newQuestion);
                 studyGuideSearchResult.questions.push(newQuestion);
                 studyGuideSearchResult.save(function (err) {
                     if (err) console.log(err);
@@ -64,33 +62,27 @@ router.post('/', function (request, response) {
 
 router.get('/', (request, response) => {
 
+    var userId = request.params.userId;
+    var studyGuideId = request.params.studyGuideId;
 
-    // Find all of the Users from the database
-    Question.findById({}).exec(function (error, users) {
-        if (error) {
-            console.log('Error retrieving users!');
-            console.log('Error: ' + error);
-            return;
-        }
-        
-                User.findById(userId)
-            .exec(function (err, user) {
-                // console.log(userId);
-                //console.log(studyGuide);
-                // var userToSearch = (User.findById(userId));
+    User.findById(userId)
+        .exec(function (err, user) {
+            // console.log(userId);
+            //console.log(studyGuide);
+            // var userToSearch = (User.findById(userId));
 
-                var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
-                    return sg._id == studyGuideId;
-                });
+            var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
+                return sg._id == studyGuideId;
+            });
                 response.json({
                     // user: user,
                     // usersStudyGuide: user.studyGuide,
                     // studyGuide: studyGuideSearchResult,
                     studyGuideQuestions: studyGuideSearchResult
                 });
+    
+        });
+});
 
-            });
-    });
-})
 
-    module.exports = router;
+module.exports = router;
