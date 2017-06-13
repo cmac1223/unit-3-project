@@ -4,12 +4,11 @@
     <!-- All your code goes inside this <section> -->
 
     <h1>
-      <h2>{{$ctrl.studyGuideList.username}}'s Questions Guide Page</h2>
+      <h2>{{$ctrl.questionList.username}}'s Questions Guide Page</h2>
     </h1>
     <br>
     <ol>
-      <li ng-repeat='studyGuide in $ctrl.studyGuideList.studyGuide'>
-        <button class="btn" ng-click="$ctrl.openStudyGuide($ctrl.studyGuideList._id)">{{studyGuide.title}}</button>
+      <li ng-repeat='question in $ctrl.questionList.question'>
       </li>
     </ol>
 

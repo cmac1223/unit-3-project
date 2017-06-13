@@ -32,16 +32,16 @@ router.post('/', function (request, response) {
                 difficulty: newQuestionDifficulty,
             }));
 
-            newQuestion.save(function (err){
+            newQuestion.save(function (err) {
                 if (err) {
                     console.log(err);
                     // return;
-                }                
+                }
                 var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
                     return sg._id == studyGuideId;
                 });
                 studyGuideSearchResult.questions.push(newQuestion);
-                studyGuideSearchResult.save(function(err) {
+                studyGuideSearchResult.save(function (err) {
                     if (err) console.log(err);
 
                     response.json({
@@ -50,35 +50,30 @@ router.post('/', function (request, response) {
                         studyGuide: studyGuideSearchResult,
                         studyGuideQuestions: studyGuideSearchResult.questions
                     });
-                    user.save(function(err) {
+                    user.save(function (err) {
                         if (err) console.log(err);
 
 
                     })
                 });
             });
-
-           
-            // console.log('================', studyGuideSearchResult);
-
-            // add a new Item to the User's list of items, using the data
-            // we grabbed off of the form
-            // console.log('===========newQuestion==============' + newQuestion);
-
-            // once we have added the new Item to the user's collection 
-            // of items, we can save the user
-            // user.save(function (err) {
-            //     if (err) {
-            //         console.log(err);
-            //         return;
-            //     }
-
-            //     // once the user has been saved, we can redirect back 
-            //     // to the User's show page, and we should see the new item
-            //     //response.redirect('/restaurants/' + userId);
-            //     response.send(newQuestion);
-            // })
         });
+
+    router.get('/', (request, response) => {
+
+        // Find all of the Users from the database
+        User.find({}).exec(function (error, users) {
+            if (error) {
+                console.log('Error retrieving users!');
+                console.log('Error: ' + error);
+                return;
+            }
+
+            // if there are no errors, send the users back as JSON
+            response.send('=======',users);
+        })
+
+    })
 });
 
 

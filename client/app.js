@@ -22,7 +22,7 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
             template: '<study-guide></study-guide>'
         })
         .state('showStudyGuide', {
-            url: '/users/:userId/studyGuides/:studyGuideId',
+            url: '/users/:userId/studyGuides/:studyGuideId/questions',
             template: '<questions></questions>'
         })
         // .state('show_expense/:expenseId', {

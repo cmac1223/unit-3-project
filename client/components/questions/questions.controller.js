@@ -8,37 +8,29 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
     var studyGuideId = $stateParams.studyGuideId;
 
     function initialize() {
-        console.log(studyGuideId);
+
         function getAllQuestionsByStudyGuideId() {
-            StudyGuidesService.getAllQuestionsByStudyGuideId(userIdForQuestion, studyGuideId)
+           QuestionService.getAllQuestionsByStudyGuideId(userIdForQuestion, studyGuideId)
                 .then(
                 function success(response) {
                     // if the call is successful, return the list of study guides
                     vm.questionList = response.data;
-                    console.log(vm.questionList);
+                     console.log(vm.questionList);
                 },
                 function failure(response) {
                     console.log('Error retrieving User Entries from database!');
                 });
         }
     }
-
+    
     initialize();
 
     vm.addNewQuestion = function () {
 
-        // the new User object will be created by binding to the form inputs
-        // const newQuestion = {
-        //     question: newQuestionQuestion,
-        //     answer: newQuestionAnswer,
-        //     topic: newQuestionTopic,
-        //     difficulty: newQuestionDifficulty,
-        // };
         console.log(vm.newQuestion);
         // this function can be used to clear the shows form
         function resetForm() {
             vm.newQuestion = '';
-
         }
 
         // Make an ajax call to save the new User to the database:

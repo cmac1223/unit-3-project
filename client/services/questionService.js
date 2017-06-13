@@ -3,12 +3,14 @@ QuestionService.$inject = ['$http']
 function QuestionService($http) {
     var self = this;
 
-     self.getAllQuestionsByStudyGuideId = function (userIdForQuestion, studyGuideId) {
-        return $http.get('/users/'+userIdForQuestion+'/studyGuides/'+studyGuideId+'/questions')
-         .then(function (response) {
+    self.getAllQuestionsByStudyGuideId = function (userIdForQuestion, studyGuideId) {
+        return $http.get('/users/' + userIdForQuestion + '/studyGuides/' + studyGuideId + '/questions')
+            .then(function (response) {
+                console.log(userIdForQuestion);
+                console.log("eweweweweweewewewewewewewew",response.data);
                 return response;
             });
-     }
+    }
 
     self.addNewQuestion = function (userIdForStudyGuide, studyGuideId, newStudyGuide) {
         console.log('youre in the newQuestion Service');
