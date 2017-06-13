@@ -4,11 +4,17 @@
     <!-- All your code goes inside this <section> -->
 
     <h1>
-      <h2>{{$ctrl.questionList.title}}'s Questions</h2>
+      <h2>{{$ctrl.questionList.title}} Study Guide</h2>
     </h1>
     <br>
-    <ol>
-      <li ng-repeat='question in $ctrl.questionList.question'>
+    <ol class='card'>
+      <li class='card-content' ng-repeat='question in $ctrl.questionList.questions'>
+      Topic: {{question.topic}}<br>
+      Difficulty: {{question.difficulty}}<br>
+      Question: {{question.question}}<br> 
+      <button ng-click="visible = !visible">Toggle Answer</button><br>
+      <span ng-show="visible = visible">Answer: {{question.answer}}</span>
+      <br>
       </li>
     </ol>
 
