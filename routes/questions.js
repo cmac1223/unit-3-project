@@ -80,6 +80,7 @@ router.get('/', (request, response) => {
                     // studyGuide: studyGuideSearchResult,
                     studyGuideQuestions: studyGuideSearchResult
                 });
+                console.log('44444444444',studyGuideSearchResult)
     
         });
 });
