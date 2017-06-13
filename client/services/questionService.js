@@ -4,7 +4,7 @@ function QuestionService($http) {
     var self = this;
 
     self.getAllQuestionsByStudyGuideId = function (userIdForQuestion, studyGuideId) {
-        console.log('question service');
+
         return $http.get('/users/' + userIdForQuestion + '/studyGuide/' + studyGuideId + '/questions')
             .then(function (response) {
                 console.log("eweweweweweewewewewewewewew",response);
