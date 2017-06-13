@@ -1,24 +1,25 @@
-QuestionsController.$inject = ['$state', '$stateParams', 'QuestionService']
+QuestionsController.$inject = ['$http', '$state', '$stateParams', 'QuestionService', '$scope']
 
-function QuestionsController($state, $stateParams, QuestionService) {
+function QuestionsController($http, $state, $stateParams, QuestionService, $scope) {
 
     var vm = this;
 
     function initialize() {
-        let userIdToShow = $stateParams.userId;
+        let userIdForQuestion = $stateParams.userId;
         let studyGuideId = $stateParams.studyGuideId;
 
-        QuestionService.getSingleUserById(userIdToShow)
-            .then(
-            function success(response) {
-                vm.userEntry = response.data;
+    //     QuestionService.getSingleUserById(userIdToShow)
+    //         .then(
+    //         function success(response) {
+    //             vm.userEntry = response.data;
 
-            },
-            function failure(response) {
-                console.log('Failed to retrieve information for User with ID of ' + userIdToShow)
-            })
+    //         },
+    //         function failure(response) {
+    //             console.log('Failed to retrieve information for User with ID of ' + userIdToShow)
+    //         })
     }
     initialize();
+    
     vm.addNewQuestion = function () {
 
         // the new User object will be created by binding to the form inputs
@@ -55,5 +56,5 @@ function QuestionsController($state, $stateParams, QuestionService) {
     };
 }
 
-
+module.exports = QuestionsController;
 

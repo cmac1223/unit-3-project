@@ -12,6 +12,7 @@ function QuestionService($http) {
 //    /users/:userId/studyGuide/:studyGuideId/questions'
 
     self.addNewQuestion = function (userIdForStudyGuide, studyGuideId, newStudyGuide) {
+        console.log('youre in the newQuestion Service');
         return $http.post('/users/' + userIdForStudyGuide + '/studyGuide/' + studyGuideId + '/questions', newStudyGuide);
     }
     // self.getSingleStudyGuideById = function (studyGuideIdToShow) {
