@@ -58,22 +58,30 @@ router.post('/', function (request, response) {
                 });
             });
         });
+})
 
-    router.get('/', (request, response) => {
+router.get('/', (request, response) => {
 
-        // Find all of the Users from the database
-        User.find({}).exec(function (error, users) {
-            if (error) {
-                console.log('Error retrieving users!');
-                console.log('Error: ' + error);
-                return;
-            }
+    var userId = request.params.userId;
+    var studyGuideId = request.params.studyGuideId;
 
-            // if there are no errors, send the users back as JSON
-            response.send('=======',users);
-        })
+    User.findById(userId)
+        .exec(function (err, user) {
+            // console.log(userId);
+            //console.log(studyGuide);
+            // var userToSearch = (User.findById(userId));
 
-    })
+            var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
+                return sg._id == studyGuideId;
+            });
+                response.json({
+                    // user: user,
+                    // usersStudyGuide: user.studyGuide,
+                    // studyGuide: studyGuideSearchResult,
+                    studyGuideQuestions: studyGuideSearchResult
+                });
+    
+        });
 });
 
 

@@ -4,10 +4,10 @@ function QuestionService($http) {
     var self = this;
 
     self.getAllQuestionsByStudyGuideId = function (userIdForQuestion, studyGuideId) {
-        return $http.get('/users/' + userIdForQuestion + '/studyGuides/' + studyGuideId + '/questions')
+        console.log('question service');
+        return $http.get('/users/' + userIdForQuestion + '/studyGuide/' + studyGuideId + '/questions')
             .then(function (response) {
-                console.log(userIdForQuestion);
-                console.log("eweweweweweewewewewewewewew",response.data);
+                console.log("eweweweweweewewewewewewewew",response);
                 return response;
             });
     }
@@ -17,15 +17,15 @@ function QuestionService($http) {
         return $http.post('/users/' + userIdForStudyGuide + '/studyGuide/' + studyGuideId + '/questions', newStudyGuide);
     }
     // self.getSingleStudyGuideById = function (studyGuideIdToShow) {
-    //     return $http.get('users/studyGuides/' + studyGuideIdToShow)
+    //     return $http.get('users/studyGuide/' + studyGuideIdToShow)
     // }
 
     // self.updateSingleStudyGuide = function (studyGuideToUpdate) {
-    //     return $http.patch('studyGuides/', studyGuideToUpdate);
+    //     return $http.patch('studyGuide/', studyGuideToUpdate);
     // }
 
     // self.deleteIdFromDatabase = function (studyGuideIdToDeleteFromDatabase) {
-    //     return $http.delete('studyGuides/' + studyGuideIdToDeleteFromDatabase);
+    //     return $http.delete('studyGuide/' + studyGuideIdToDeleteFromDatabase);
     // }
 }
 
