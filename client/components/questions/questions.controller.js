@@ -43,7 +43,7 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
                 const newQuestion = response.data;
                 // vm.userEntries.push(newQuestion;
                 // then reset the form so we can submit more users
-                resetForm();
+                getAllQuestionsByStudyGuideId()
 
             },
             function failure(response) {
@@ -53,6 +53,7 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
                 console.log('Error saving new Study Guide to database!');
             });
     };
+
 }
 
 module.exports = QuestionsController;

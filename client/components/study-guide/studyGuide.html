@@ -5,25 +5,16 @@
     <!--<h1>Users Study Guide Page</h1>-->
 
     <form ng-submit="$ctrl.addNewStudyGuide()">
-        <h1>STUDY GUIDE</h1>
-         <!--<button class="btn" ng-click="$ctrl.vm.newStudyGuideTitle(users._id)">Study Guide</button>-->
-          <!--<div>First Name<input type="text" ng-model="$ctrl.vm.newStudyGuideTitle(users._id)" required></div>-->
-          <!--<div>Last Name <input type="text" ng-model="$ctrl.newUserLastName" required></div>
-          <div>User Name<input type="text" ng-model="$ctrl.newUserUsername"></div>
-          <div>Email<input type="text" ng-model="$ctrl.newUserEmail"></div>
-          <div><input class="btn" type="submit" value="Add New User"></div>-->
+      <h1>STUDY GUIDE</h1>
     </form>
-
-    <!-- All your code goes inside this <section> -->
-
     <h1>
       <h2>{{$ctrl.studyGuideList.username}}'s Study Guide Page</h2>
     </h1>
     <br>
     <ol>
       <li ng-repeat='studyGuide in $ctrl.studyGuideList.studyGuide'>
-        <!--<button class="btn" ng-click="$ctrl.openStudyGuide(studyGuide._id)">{{studyGuide.title}}</button>-->
         <button class="btn" ui-sref="showStudyGuide({userId: $ctrl.userId, studyGuideId: studyGuide._id})">{{studyGuide.title}}</button>
+        <button class="btn" ng-click="$ctrl.deleteStudyGuideFromDatabase(studyGuide._id)">Delete {{studyGuide.title}}</button>
       </li>
     </ol>
 
@@ -40,4 +31,3 @@
   </section>
 
 </div>
-

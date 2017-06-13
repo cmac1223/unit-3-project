@@ -5,13 +5,6 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
 
     let vm = this;
 
-
-    /**
-     * We will run this function the first time we load our component.
-     *
-     * We can use an 'initialize' function to pre-load some data
-     * from the database.
-     */
     function initialize() {
         getAllUsers();
     }
@@ -43,11 +36,7 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             email: vm.newUserEmail
         };
 
-            // this function can be used to clear the shows form
-    function resetForm() {
-        vm.newUser = '';
-
-    }
+        // this function can be used to clear the shows form
 
         // Make an ajax call to save the new User to the database:
         UsersService.addNewUser(newUser)
@@ -66,12 +55,20 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
                 // DO NOT push the new object to the array
                 console.log('Error saving new User to database!');
             });
+
+        function resetForm() {
+            vm.newUserFirstName = '';
+            vm.newUserLastName = '';
+            vm.newUserUsername = '';
+            vm.newUserEmail = '';
+        }
+        resetForm();
     };
 
- vm.showUser = function (userId) {
+    vm.showUser = function (userId) {
         $state.go('showUser', { userId: userId });
     }
 
 }
- 
+
 module.exports = UsersController;

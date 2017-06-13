@@ -4,10 +4,10 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
 
     let vm = this;
     let userIdForStudyGuide = $stateParams.userId;
+
     vm.userId = $stateParams.userId;
 
     function initialize() {
-        console.log(userIdForStudyGuide);
         getAllStudyGuidesByUserId();
 
     }
@@ -18,7 +18,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
             .then(
             function success(response) {
                 // if the call is successful, return the list of study guides
-                 vm.studyGuideList = response.data;
+                vm.studyGuideList = response.data;
             },
             function failure(response) {
                 console.log('Error retrieving User Entries from database!');
@@ -45,7 +45,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
                 const newStudyGuide = response.data;
                 // vm.userEntries.push(newStudyGuide);
                 // then reset the form so we can submit more users
-                resetForm();
+                 getAllStudyGuidesByUserId()
 
             },
             function failure(response) {
@@ -56,14 +56,27 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
             });
     };
 
+    vm.openStudyGuide = function (studyGuideId) {
+        $state.go('showStudyGuide',
+            {
+                userId: userIdForStudyGuide,
+                studyGuideId: studyGuideId
+            });
+    }
 
-     vm.openStudyGuide = function (studyGuideId) {
-         console.log(studyGuideId);
-         console.log(userIdForStudyGuide);
-         $state.go('showStudyGuide', 
-            { userId: userIdForStudyGuide, 
-             studyGuideId: studyGuideId });
-     }
+     vm.deleteStudyGuideFromDatabase = function (studyGuideToDelete) {
+        let userIdToDeleteFrom = $stateParams.userId;
+        StudyGuidesService.deleteStudyGuideFromDatabase(userIdToDeleteFrom, studyGuideToDelete)
+            .then(
+            function success(response) {
+                getAllStudyGuidesByUserId()
+                console.log('study guide deleted from database!');
+
+            },
+            function failure(response) {
+                console.log('this is a failure');
+            })
+    }
 }
 
 module.exports = StudyGuidesController;
