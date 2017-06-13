@@ -1,5 +1,5 @@
 StudyGuidesService.$inject = ['$http']
-
+//makes the http calls for the 
 function StudyGuidesService($http) {
     var self = this;
 
@@ -9,7 +9,6 @@ function StudyGuidesService($http) {
                 return response;
             });
     };
-
 
     self.addNewStudyGuide = function (userIdForStudyGuide, newStudyGuide) {
         return $http.post('/users/' + userIdForStudyGuide + '/studyGuide/', newStudyGuide);

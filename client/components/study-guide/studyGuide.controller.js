@@ -7,12 +7,13 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
 
     vm.userId = $stateParams.userId;
 
+// what runs when the page loads
     function initialize() {
         getAllStudyGuidesByUserId();
 
     }
     initialize();
-
+//finds the study guides to render on the page
     function getAllStudyGuidesByUserId() {
         StudyGuidesService.getAllStudyGuidesByUserId(userIdForStudyGuide)
             .then(
@@ -24,7 +25,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
                 console.log('Error retrieving User Entries from database!');
             });
     }
-
+//new study guide
     vm.addNewStudyGuide = function () {
 
         // the new User object will be created by binding to the form inputs
@@ -43,7 +44,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
             function success(response) {
 
                 const newStudyGuide = response.data;
-
+//after a new SG is aded re-populate the page
                 getAllStudyGuidesByUserId()
 
             },
@@ -52,6 +53,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
                 console.log('Error saving new Study Guide to database!');
             });
     };
+    //function that opens the study guide
     vm.openStudyGuide = function (studyGuideId) {
         $state.go('showStudyGuide',
             {
@@ -59,6 +61,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
                 studyGuideId: studyGuideId
             });
     }
+    //delete the study guide
     vm.deleteStudyGuideFromDatabase = function (studyGuideToDelete) {
         let userIdToDeleteFrom = $stateParams.userId;
         StudyGuidesService.deleteStudyGuideFromDatabase(userIdToDeleteFrom, studyGuideToDelete)

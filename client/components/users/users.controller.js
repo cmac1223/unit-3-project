@@ -4,12 +4,12 @@ UsersController.$inject = ['$http', '$state', '$stateParams', 'UsersService', '$
 function UsersController($http, $state, $stateParams, UsersService, $scope) {
 
     let vm = this;
-
+//this is what runs as the page loads
     function initialize() {
         getAllUsers();
     }
     initialize();
-
+//get all users to render on the page
     function getAllUsers() {
         UsersService.getAllUsers()
             .then(
@@ -23,6 +23,7 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             );
     }
     // This function handles our form submission.
+    //add a new user
     vm.addNewUser = function () {
 
         // the new User object will be created by binding to the form inputs
@@ -32,7 +33,7 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             username: vm.newUserUsername,
             email: vm.newUserEmail
         };
-
+//add a new user
         UsersService.addNewUser(newUser)
             .then(
             function success(response) {
@@ -56,7 +57,7 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
         }
         resetForm();
     };
-
+//renders the show user page on click
     vm.showUser = function (userId) {
         $state.go('showUser', { userId: userId });
     }

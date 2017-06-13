@@ -4,7 +4,7 @@ TriviaController.$inject = ['TriviaService'];
 
 function TriviaController(TriviaService) {
     const vm = this;
-    
+      
     vm.getTrivia = getTrivia;
     vm.trivia = '';
 
@@ -21,7 +21,6 @@ function TriviaController(TriviaService) {
                 vm.trivia = response.data[0];
             });
     }
-
 };
 
 module.exports = TriviaController;

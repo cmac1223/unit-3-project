@@ -2,12 +2,11 @@ QuestionService.$inject = ['$http']
 
 function QuestionService($http) {
     var self = this;
-
+//makes the http calls for questions
     self.getAllQuestionsByStudyGuideId = function (userIdForQuestion, studyGuideId) {
 
         return $http.get('/users/' + userIdForQuestion + '/studyGuide/' + studyGuideId + '/questions')
             .then(function (response) {
-                console.log("eweweweweweewewewewewewewew", response);
                 return response;
             });
     }

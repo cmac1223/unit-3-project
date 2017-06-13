@@ -1,4 +1,5 @@
 UsersService.$inject = ['$http']
+//makes https calls for the users controller
 function UsersService($http) {
     var self = this;
     self.getAllUsers = function () {

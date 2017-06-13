@@ -8,11 +8,10 @@
     <button class="btn" ng-click="$ctrl.deleteUser($ctrl.userEntry._id)">Delete</button>
     </a></span>
     <a ui-sref="trivia"><button class="btn">TRIVIA</button></a>
-    <!--<a ui-sref='studyGuide'><button class="btn">STUDY GUIDE</button></a>-->
     <button class="btn" ng-click="$ctrl.showStudyGuide($ctrl.userEntry._id)">Study Guide</button>
+    <!--this is the button for the articles page - it will be active but not currently-->
     <!--<a ui-sref="articles"><button class="btn">Articles</button></a>-->
-
-
+<!--invisible form that opens on click-->
     <div ng-show="visible" class="container">
         <div class="card">
             <div class="card-content">

@@ -75,7 +75,7 @@ router.post('/', (request, response) => {
             response.send(200);
         });
 });
-
+//deletes the users route - finds by id and removes from database
   router.delete('/:userId', function (request, response) {
     const userIdToDelete = request.params.userId;
     User.findByIdAndRemove(userIdToDelete).exec(function (error) {

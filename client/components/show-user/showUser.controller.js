@@ -4,7 +4,7 @@ ShowUserController.$inject = ['$state', '$stateParams', 'UsersService']
 function ShowUserController($state, $stateParams, UsersService) {
 
     var vm = this;
-
+//what runs when the page loads
     function initialize() {
         let userIdToShow = $stateParams.userId;
 
@@ -21,7 +21,7 @@ function ShowUserController($state, $stateParams, UsersService) {
             )
     }
     initialize();
-
+//update user
     vm.updateUserInformation = function () {
         UsersService.updateSingleUser(vm.userEntry)
             .then(
@@ -32,7 +32,7 @@ function ShowUserController($state, $stateParams, UsersService) {
             }
             )
     }
-
+//delete user
     vm.deleteUser = function (userIdToDeleteFromDatabase) {
         console.log('delete user was called')
         UsersService.deleteIdFromDatabase(userIdToDeleteFromDatabase)
@@ -50,7 +50,7 @@ function ShowUserController($state, $stateParams, UsersService) {
                 console.log('Error deleting User with ID of ' + userIdToDeleteFromDatabase);
             })
     }
-
+//this is the function that runs when you click on the show user button
     vm.showStudyGuide = function (userIdForStudyGuide) {
         $state.go('studyGuideIndex', { userId: userIdForStudyGuide });
     }

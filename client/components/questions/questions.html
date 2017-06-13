@@ -11,6 +11,7 @@
       Topic: {{question.topic}}<br>
       Difficulty: {{question.difficulty}}<br>
       </span> Question: {{question.question}}<br>
+        <!--sick toggle action-->
         <button ng-click="visible = !visible">Toggle Answer</button><br>
         <span ng-show="visible = visible">Answer: {{question.answer}}</span>
         <br>
@@ -33,7 +34,4 @@
       </div>
     </div>
   </section>
-
-  <h3>{{$ctrl.newQuestionQuestion}}</h3>
-
 </div>

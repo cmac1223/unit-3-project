@@ -28,7 +28,7 @@ router.post('/', function (request, response) {
                 topic: newQuestionTopic,
                 difficulty: newQuestionDifficulty,
             }));
-
+//saves the new questions in the server
             newQuestion.save(function (err) {
                 if (err) {
                     console.log(err);
@@ -54,7 +54,7 @@ router.post('/', function (request, response) {
             });
         });
 })
-
+//gets the users from the database
 router.get('/', (request, response) => {
 
     var userId = request.params.userId;

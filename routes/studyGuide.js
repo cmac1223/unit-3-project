@@ -36,7 +36,7 @@ router.post('/', function (request, response) {
             })
         });
 });
-
+//study guide delete route
 router.delete('/:studyGuideId', (request, response) => {
 
     var userId = request.params.userId;

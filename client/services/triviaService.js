@@ -1,4 +1,4 @@
-
+//pulls a random trivia question and displays on the page
 TriviaService.$inject = ['$http'];
 
 function TriviaService($http) {
