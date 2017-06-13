@@ -21,9 +21,6 @@ router.post('/', function (request, response) {
     // Find the User in the database we want to save the new Item for
     User.findById(userId)
         .exec(function (err, user) {
-            // console.log(userId);
-            //console.log(studyGuide);
-            // var userToSearch = (User.findById(userId));
 
             var newQuestion = new Question(({
                 question: newQuestionQuestion,
@@ -35,7 +32,7 @@ router.post('/', function (request, response) {
             newQuestion.save(function (err) {
                 if (err) {
                     console.log(err);
-                    // return;
+
                 }
                 var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
                     return sg._id == studyGuideId;
@@ -52,8 +49,6 @@ router.post('/', function (request, response) {
                     });
                     user.save(function (err) {
                         if (err) console.log(err);
-
-
                     })
                 });
             });
@@ -67,21 +62,15 @@ router.get('/', (request, response) => {
 
     User.findById(userId)
         .exec(function (err, user) {
-            // console.log(userId);
-            //console.log(studyGuide);
-            // var userToSearch = (User.findById(userId));
 
             var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
                 return sg._id == studyGuideId;
             });
-                response.json({
-                    // user: user,
-                    // usersStudyGuide: user.studyGuide,
-                    // studyGuide: studyGuideSearchResult,
-                    studyGuideQuestions: studyGuideSearchResult
-                });
-                console.log('44444444444',studyGuideSearchResult)
-    
+            response.json({
+
+                studyGuideQuestions: studyGuideSearchResult
+            });
+
         });
 });
 

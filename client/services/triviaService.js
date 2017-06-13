@@ -11,7 +11,6 @@ function TriviaService($http) {
                 return response;
             });
     };
-
 };
 
 angular.module('trivia-trainer').service('TriviaService', TriviaService);

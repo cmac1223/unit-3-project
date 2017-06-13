@@ -10,8 +10,6 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
     }
     initialize();
 
-    // this function grabs all of the users from the database
-    // via an AJAX call
     function getAllUsers() {
         UsersService.getAllUsers()
             .then(
@@ -24,7 +22,6 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             }
             );
     }
-
     // This function handles our form submission.
     vm.addNewUser = function () {
 
@@ -36,9 +33,6 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             email: vm.newUserEmail
         };
 
-        // this function can be used to clear the shows form
-
-        // Make an ajax call to save the new User to the database:
         UsersService.addNewUser(newUser)
             .then(
             function success(response) {
@@ -50,9 +44,7 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
 
             },
             function failure(response) {
-                // if the http call is not successful, log the error
-                // DO NOT clear the form
-                // DO NOT push the new object to the array
+
                 console.log('Error saving new User to database!');
             });
 

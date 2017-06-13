@@ -18,7 +18,7 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
         })
         .state('studyGuideIndex', {
             url: '/users/:userId/studyGuide',
-            params: [ 'userId' ],
+            params: ['userId'],
             template: '<study-guide></study-guide>'
         })
         .state('articles', {
@@ -29,17 +29,8 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
             url: '/users/:userId/studyGuide/:studyGuideId/questions',
             template: '<questions></questions>'
         })
-        // .state('show_expense/:expenseId', {
-        //     url: '/show_expense/:expenseId',
-        //     params: [ 'expenseId' ],
-        //     template: '<show-expense></show-expense>'
-        // })
-        // .state('edit_expense/:expenseId', {
-        //     url: '/edit_expense/:expenseId',
-        //     params: [ 'expenseId' ],
-        //     template: '<edit-expense></edit-expense>'
-        // });
-         .state('trivia', {
+
+        .state('trivia', {
             url: '/trivia',
             template: '<trivia></trivia>'
         })

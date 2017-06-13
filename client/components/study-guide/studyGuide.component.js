@@ -6,5 +6,4 @@ let StudyGuideComponent = {
     controller: studyGuideController
 }
 
-
 angular.module('trivia-trainer').component('studyGuide', StudyGuideComponent);

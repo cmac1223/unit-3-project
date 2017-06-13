@@ -5,7 +5,6 @@ function ShowUserController($state, $stateParams, UsersService) {
 
     var vm = this;
 
-
     function initialize() {
         let userIdToShow = $stateParams.userId;
 
@@ -34,26 +33,25 @@ function ShowUserController($state, $stateParams, UsersService) {
             )
     }
 
-
     vm.deleteUser = function (userIdToDeleteFromDatabase) {
         console.log('delete user was called')
         UsersService.deleteIdFromDatabase(userIdToDeleteFromDatabase)
             .then(
-                function success(response) {
+            function success(response) {
 
-                    var userIndexToDelete = vm.userEntries.indexOf(userIdToDeleteFromDatabase);
-                    // only delete the User from the Angular array if
-                    // it was successfully deleted from the database
-                    vm.userEntries.splice(userIndexToDelete, 1);
-                },
-                function failure(response) {
-                    // DO NOT delete the User from the Angular array if the
-                    // user is not successfully deleted from the database
-                    console.log('Error deleting User with ID of ' + userIdToDeleteFromDatabase);
-                })
+                var userIndexToDelete = vm.userEntries.indexOf(userIdToDeleteFromDatabase);
+                // only delete the User from the Angular array if
+                // it was successfully deleted from the database
+                vm.userEntries.splice(userIndexToDelete, 1);
+            },
+            function failure(response) {
+                // DO NOT delete the User from the Angular array if the
+                // user is not successfully deleted from the database
+                console.log('Error deleting User with ID of ' + userIdToDeleteFromDatabase);
+            })
     }
-    
-     vm.showStudyGuide = function (userIdForStudyGuide) {
+
+    vm.showStudyGuide = function (userIdForStudyGuide) {
         $state.go('studyGuideIndex', { userId: userIdForStudyGuide });
     }
 

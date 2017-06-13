@@ -3,12 +3,6 @@ var router = express.Router();
 var User = require('../models/user');
 var studyGuide = require("../models/studyGuide")
 
-/* GET users listing. */
-// router.get('/', function (request, response, next) {
-//   response.send('respond with a resource');
-// });
-
-
 router.get('/', (request, response) => {
 
   // Find all of the Users from the database
@@ -28,7 +22,6 @@ router.get('/', (request, response) => {
 router.get('/:userId/', function (request, response) {
 
     const userIdToShow = request.params.userId;
-
 
     User.findById(userIdToShow, function (error, foundUser) {
         if (error) {

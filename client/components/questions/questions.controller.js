@@ -10,7 +10,6 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
     function initialize() {
 
         getAllQuestionsByStudyGuideId();
-
     }
 
     initialize();
@@ -20,7 +19,7 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
             function success(response) {
                 // if the call is successful, return the list of study guides
                 vm.questionList = response.data.studyGuideQuestions;
-                console.log('dvhdfhdfhdfjdhfjdhfjd',vm.questionList);
+                console.log('dvhdfhdfhdfjdhfjdhfjd', vm.questionList);
             },
             function failure(response) {
                 console.log('Error retrieving User Entries from database!');
@@ -41,15 +40,12 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
             function success(response) {
                 // only push to the userEntries array if the ajax call is successful
                 const newQuestion = response.data;
-                // vm.userEntries.push(newQuestion;
-                // then reset the form so we can submit more users
+
                 getAllQuestionsByStudyGuideId()
 
             },
             function failure(response) {
-                // if the http call is not successful, log the error
-                // DO NOT clear the form
-                // DO NOT push the new object to the array
+
                 console.log('Error saving new Study Guide to database!');
             });
     };

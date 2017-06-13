@@ -1,22 +1,19 @@
 <div>
   <section id="questions">
 
-    <!-- All your code goes inside this <section> -->
-
     <h1>
       <h2>{{$ctrl.questionList.title}} Study Guide</h2>
     </h1>
     <br>
     <ol class='card'>
       <li class='card-content' ng-repeat='question in $ctrl.questionList.questions'>
-      <span class="t-d">
+        <span class="t-d">
       Topic: {{question.topic}}<br>
       Difficulty: {{question.difficulty}}<br>
-      </span>
-      Question: {{question.question}}<br>
-      <button ng-click="visible = !visible">Toggle Answer</button><br>
-      <span ng-show="visible = visible">Answer: {{question.answer}}</span>
-      <br>
+      </span> Question: {{question.question}}<br>
+        <button ng-click="visible = !visible">Toggle Answer</button><br>
+        <span ng-show="visible = visible">Answer: {{question.answer}}</span>
+        <br>
       </li>
     </ol>
 
@@ -25,13 +22,13 @@
     <div class="card" ng-show='visible'>
       <div class="card-content">
         <div class="questions">
-        <form ng-submit="$ctrl.addNewQuestion()">
-          <div>Question <input type="text" ng-model="$ctrl.newQuestion.question"></div>
-          <div>Answer <input type="text" ng-model="$ctrl.newQuestion.answer"></div>
-          <div>Topic <input type="text" ng-model="$ctrl.newQuestion.topic"></div>
-          <div>Difficulty <input type="text" ng-model="$ctrl.newQuestion.difficulty"></div>
-          <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Add Question</button>
-        </form>
+          <form ng-submit="$ctrl.addNewQuestion()">
+            <div>Question <input type="text" ng-model="$ctrl.newQuestion.question"></div>
+            <div>Answer <input type="text" ng-model="$ctrl.newQuestion.answer"></div>
+            <div>Topic <input type="text" ng-model="$ctrl.newQuestion.topic"></div>
+            <div>Difficulty <input type="text" ng-model="$ctrl.newQuestion.difficulty"></div>
+            <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Add Question</button>
+          </form>
         </div>
       </div>
     </div>

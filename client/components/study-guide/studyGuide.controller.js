@@ -41,21 +41,17 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
         StudyGuidesService.addNewStudyGuide(userIdForStudyGuide, newStudyGuide)
             .then(
             function success(response) {
-                // only push to the userEntries array if the ajax call is successful
+
                 const newStudyGuide = response.data;
-                // vm.userEntries.push(newStudyGuide);
-                // then reset the form so we can submit more users
-                 getAllStudyGuidesByUserId()
+
+                getAllStudyGuidesByUserId()
 
             },
             function failure(response) {
-                // if the http call is not successful, log the error
-                // DO NOT clear the form
-                // DO NOT push the new object to the array
+
                 console.log('Error saving new Study Guide to database!');
             });
     };
-
     vm.openStudyGuide = function (studyGuideId) {
         $state.go('showStudyGuide',
             {
@@ -63,15 +59,13 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
                 studyGuideId: studyGuideId
             });
     }
-
-     vm.deleteStudyGuideFromDatabase = function (studyGuideToDelete) {
+    vm.deleteStudyGuideFromDatabase = function (studyGuideToDelete) {
         let userIdToDeleteFrom = $stateParams.userId;
         StudyGuidesService.deleteStudyGuideFromDatabase(userIdToDeleteFrom, studyGuideToDelete)
             .then(
             function success(response) {
                 getAllStudyGuidesByUserId()
                 console.log('study guide deleted from database!');
-
             },
             function failure(response) {
                 console.log('this is a failure');

@@ -8,16 +8,12 @@ function TriviaController(TriviaService) {
     vm.getTrivia = getTrivia;
     vm.trivia = '';
 
-    // WHAT THIS CONTROLLER HAS / DOES THAT IS CONNECTED TO THE VIEW
-
-    // activate === BEST PRACTICE, ALWAYS DO IT, EVEN IF EMPTY
     activate();
 
     function activate() {
         getTrivia();
     }
 
-    // HOW IT DOES STUFF
     function getTrivia() {
         TriviaService.getTrivia()
             .then(function resolve(response) {

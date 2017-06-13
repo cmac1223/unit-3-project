@@ -7,9 +7,6 @@ function ArticlesController(ArticlesService) {
     vm.getArticles = getArticles;
     vm.articles = '';
 
-    // WHAT THIS CONTROLLER HAS / DOES THAT IS CONNECTED TO THE VIEW
-
-    // activate === BEST PRACTICE, ALWAYS DO IT, EVEN IF EMPTY
     activate();
 
     function activate() {

@@ -1,33 +1,20 @@
 <div>
-<section id="trivia">
+  <section id="trivia">
 
-  <h1>TRIVIA: TEST YOURSELF!</h1>
+    <h1>TRIVIA: TEST YOURSELF!</h1>
 
-<span ng-click ='visible = false'>
+    <span ng-click='visible = false'>
   <button class="btn" ng-click='$ctrl.getTrivia()'>Get A Question</button>
 </span>
-  <ul>
-    <li>Title: {{$ctrl.trivia.category.title | uppercase}}</li>
-    <br>
-    <li>Question: {{$ctrl.trivia.question}}</li>
-    <br>
-    <button class="btn" ng-click="visible = !visible">Toggle Answer</button>
-    <br>
-    <br>
-    <li ng-show="visible = visible">Answer: {{$ctrl.trivia.answer}}</li>
-  </ul>
-</section>
+    <ul>
+      <li>Title: {{$ctrl.trivia.category.title | uppercase}}</li>
+      <br>
+      <li>Question: {{$ctrl.trivia.question}}</li>
+      <br>
+      <button class="btn" ng-click="visible = !visible">Toggle Answer</button>
+      <br>
+      <br>
+      <li ng-show="visible = visible">Answer: {{$ctrl.trivia.answer}}</li>
+    </ul>
+  </section>
 </div>
-
-<!--Create Filter:
-
-var app = angular.module('myHDApp', []);
-
-app.filter('removeHTMLTags', function() {
-	return function(text) {
-		return  text ? String(text).replace(/<[^>]+>/gm, '') : '';
-	};
-});
-Use Filter:
-
-<p>{{ yourText | removeHTMLTags }}</p>  -->
