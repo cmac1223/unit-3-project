@@ -5,7 +5,7 @@ function ArticlesService($http) {
     const self = this;
 
     self.getArticles = function () {
-        return $http.get("http://forismatic.com/en/39477220ce/")
+        return $http.get("http://www.google.com/ig/api?weather=")
 
             .then(function (response) {
                 return response;
@@ -15,3 +15,5 @@ function ArticlesService($http) {
 };
 
 angular.module('trivia-trainer').service('ArticlesService', ArticlesService);
+
+
