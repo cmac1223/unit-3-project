@@ -3,33 +3,38 @@ QuestionsController.$inject = ['$http', '$state', '$stateParams', 'QuestionServi
 function QuestionsController($http, $state, $stateParams, QuestionService, $scope) {
 
     var vm = this;
+    vm.newQuestion = {};
+    var userIdForQuestion = $stateParams.userId;
+    var studyGuideId = $stateParams.studyGuideId;
 
     function initialize() {
-        let userIdForQuestion = $stateParams.userId;
-        let studyGuideId = $stateParams.studyGuideId;
-
-    //     QuestionService.getSingleUserById(userIdToShow)
-    //         .then(
-    //         function success(response) {
-    //             vm.userEntry = response.data;
-
-    //         },
-    //         function failure(response) {
-    //             console.log('Failed to retrieve information for User with ID of ' + userIdToShow)
-    //         })
+        console.log(studyGuideId);
+        function getAllQuestionsByStudyGuideId() {
+            StudyGuidesService.getAllQuestionsByStudyGuideId(userIdForQuestion, studyGuideId)
+                .then(
+                function success(response) {
+                    // if the call is successful, return the list of study guides
+                    vm.questionList = response.data;
+                    console.log(vm.questionList);
+                },
+                function failure(response) {
+                    console.log('Error retrieving User Entries from database!');
+                });
+        }
     }
+
     initialize();
-    
+
     vm.addNewQuestion = function () {
 
         // the new User object will be created by binding to the form inputs
-        const newQuestion = {
-            question: newQuestionQuestion,
-            answer: newQuestionAnswer,
-            topic: newQuestionTopic,
-            difficulty: newQuestionDifficulty,
-        };
-
+        // const newQuestion = {
+        //     question: newQuestionQuestion,
+        //     answer: newQuestionAnswer,
+        //     topic: newQuestionTopic,
+        //     difficulty: newQuestionDifficulty,
+        // };
+        console.log(vm.newQuestion);
         // this function can be used to clear the shows form
         function resetForm() {
             vm.newQuestion = '';
@@ -37,7 +42,7 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
         }
 
         // Make an ajax call to save the new User to the database:
-        QuestionService.addNewQuestion(userIdForQuestion, studyGuideId, newQuestion)
+        QuestionService.addNewQuestion(userIdForQuestion, studyGuideId, vm.newQuestion)
             .then(
             function success(response) {
                 // only push to the userEntries array if the ajax call is successful

@@ -4,9 +4,10 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
 
     let vm = this;
     let userIdForStudyGuide = $stateParams.userId;
+    vm.userId = $stateParams.userId;
 
     function initialize() {
-
+        console.log(userIdForStudyGuide);
         getAllStudyGuidesByUserId();
 
     }
@@ -17,6 +18,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
             .then(
             function success(response) {
                 // if the call is successful, return the list of study guides
+                console.log(response);
                  vm.studyGuideList = response.data;
                  console.log(vm.studyGuideList);
             },
@@ -57,8 +59,12 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
     };
 
 
-     vm.openStudyGuide = function (userId) {
-         $state.go('study_guide/:userId/questions', { userId: userId });
+     vm.openStudyGuide = function (studyGuideId) {
+         console.log(studyGuideId);
+         console.log(userIdForStudyGuide);
+         $state.go('showStudyGuide', 
+            { userId: userIdForStudyGuide, 
+             studyGuideId: studyGuideId });
      }
 }
 

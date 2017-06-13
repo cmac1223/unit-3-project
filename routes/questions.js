@@ -50,11 +50,11 @@ router.post('/', function (request, response) {
                         studyGuide: studyGuideSearchResult,
                         studyGuideQuestions: studyGuideSearchResult.questions
                     });
-                    // user.save(function(err) {
-                    //     if (err) console.log(err);
+                    user.save(function(err) {
+                        if (err) console.log(err);
 
 
-                    // })
+                    })
                 });
             });
 

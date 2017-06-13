@@ -18,14 +18,16 @@
     <div class="card" ng-show='visible'>
       <div class="card-content">
         <form ng-submit="$ctrl.addNewQuestion()">
-          <div>Question <input type="text" ng-model="$ctrl.newQuestionQuestion"></div>
-          <div>Answer <input type="text" ng-model="$ctrl.newQuestionAnswer"></div>
-          <div>Topic <input type="text" ng-model="$ctrl.newQuestionTopic"></div>
-          <div>Difficulty <input type="text" ng-model="ctrl.newQuestionDifficulty"></div>
+          <div>Question <input type="text" ng-model="$ctrl.newQuestion.question"></div>
+          <div>Answer <input type="text" ng-model="$ctrl.newQuestion.answer"></div>
+          <div>Topic <input type="text" ng-model="$ctrl.newQuestion.topic"></div>
+          <div>Difficulty <input type="text" ng-model="$ctrl.newQuestion.difficulty"></div>
           <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Add Question</button>
         </form>
       </div>
     </div>
   </section>
+
+  <h3>{{$ctrl.newQuestionQuestion}}</h3>
 
 </div>

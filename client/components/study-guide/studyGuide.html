@@ -9,7 +9,8 @@
     <br>
     <ol>
       <li ng-repeat='studyGuide in $ctrl.studyGuideList.studyGuide'>
-        <button class="btn" ng-click="$ctrl.openStudyGuide($ctrl.studyGuideList._id)">{{studyGuide.title}}</button>
+        <!--<button class="btn" ng-click="$ctrl.openStudyGuide(studyGuide._id)">{{studyGuide.title}}</button>-->
+        <button class="btn" ui-sref="showStudyGuide({userId: $ctrl.userId, studyGuideId: studyGuide._id})">{{studyGuide.title}}</button>
       </li>
     </ol>
 
