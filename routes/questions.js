@@ -18,10 +18,11 @@ router.post('/', function (request, response) {
     var newQuestionTopic = request.body.topic;
     var newQuestionDifficulty = request.body.difficulty
 
-    // Find the User in the database we want to save the new Item for
-    User.findById(userId)
+    // Find the Study Guide in the database we want to save the new Question for
+    // I changed userId to studyGuideId in lines 23 and 25
+    StudyGuide.findById(studyGuideId)
         .exec(function (err, user) {
-            // console.log(userId);
+            console.log('=====studyGuideId',studyGuideId);
             //console.log(studyGuide);
             // var userToSearch = (User.findById(userId));
 
@@ -40,6 +41,7 @@ router.post('/', function (request, response) {
                 var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
                     return sg._id == studyGuideId;
                 });
+                //studyGuideSearchResult.questions.push(newQuestion);
                 studyGuideSearchResult.questions.push(newQuestion);
                 studyGuideSearchResult.save(function (err) {
                     if (err) console.log(err);
@@ -62,7 +64,7 @@ router.post('/', function (request, response) {
     router.get('/', (request, response) => {
 
         // Find all of the Users from the database
-        User.find({}).exec(function (error, users) {
+        Question.findById({}).exec(function (error, users) {
             if (error) {
                 console.log('Error retrieving users!');
                 console.log('Error: ' + error);

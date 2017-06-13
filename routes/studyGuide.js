@@ -13,6 +13,9 @@ router.post('/', function (request, response) {
 
     // grab the user ID we want to create a new item for
     var userId = request.params.userId;
+    var studyGuideId = request.params.studyGuideId;
+    console.log('========',studyGuideId);
+
 
     // then grab the new Item that we created using the form
     var newStudyGuideTitle = request.body.title;
@@ -20,7 +23,8 @@ router.post('/', function (request, response) {
     // Find the User in the database we want to save the new Item for
     User.findById(userId)
         .exec(function (err, user) {
-            console.log(userId);
+            console.log('*********',userId);
+            console.log('===========',studyGuideId);
 
 
             var newStudyGuide = new StudyGuide(({ title: newStudyGuideTitle }))
