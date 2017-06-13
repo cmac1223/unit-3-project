@@ -22,7 +22,7 @@ router.post('/', function (request, response) {
     // I changed userId to studyGuideId in lines 23 and 25
     StudyGuide.findById(studyGuideId)
         .exec(function (err, user) {
-            console.log('=====studyGuideId',studyGuideId);
+            console.log('=====studyGuideId', studyGuideId);
             //console.log(studyGuide);
             // var userToSearch = (User.findById(userId));
 
@@ -60,23 +60,37 @@ router.post('/', function (request, response) {
                 });
             });
         });
+})
 
-    router.get('/', (request, response) => {
-
-        // Find all of the Users from the database
-        Question.findById({}).exec(function (error, users) {
-            if (error) {
-                console.log('Error retrieving users!');
-                console.log('Error: ' + error);
-                return;
-            }
-
-            // if there are no errors, send the users back as JSON
-            response.send('=======',users);
-        })
-
-    })
-});
+router.get('/', (request, response) => {
 
 
-module.exports = router;
+    // Find all of the Users from the database
+    Question.findById({}).exec(function (error, users) {
+        if (error) {
+            console.log('Error retrieving users!');
+            console.log('Error: ' + error);
+            return;
+        }
+        
+                User.findById(userId)
+            .exec(function (err, user) {
+                // console.log(userId);
+                //console.log(studyGuide);
+                // var userToSearch = (User.findById(userId));
+
+                var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
+                    return sg._id == studyGuideId;
+                });
+                response.json({
+                    // user: user,
+                    // usersStudyGuide: user.studyGuide,
+                    // studyGuide: studyGuideSearchResult,
+                    studyGuideQuestions: studyGuideSearchResult
+                });
+
+            });
+    });
+})
+
+    module.exports = router;

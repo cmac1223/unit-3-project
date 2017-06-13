@@ -17,12 +17,12 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
             template: '<show-user></show-user>'
         })
         .state('studyGuideIndex', {
-            url: '/users/:userId/studyGuides',
+            url: '/users/:userId/studyGuide',
             params: [ 'userId' ],
             template: '<study-guide></study-guide>'
         })
         .state('showStudyGuide', {
-            url: '/users/:userId/studyGuides/:studyGuideId/questions',
+            url: '/users/:userId/studyGuide/:studyGuideId/questions',
             template: '<questions></questions>'
         })
         // .state('show_expense/:expenseId', {

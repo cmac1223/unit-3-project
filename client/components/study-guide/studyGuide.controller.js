@@ -18,9 +18,7 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
             .then(
             function success(response) {
                 // if the call is successful, return the list of study guides
-                console.log(response);
                  vm.studyGuideList = response.data;
-                 console.log(vm.studyGuideList);
             },
             function failure(response) {
                 console.log('Error retrieving User Entries from database!');

@@ -9,21 +9,23 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
 
     function initialize() {
 
-        function getAllQuestionsByStudyGuideId() {
-           QuestionService.getAllQuestionsByStudyGuideId(userIdForQuestion, studyGuideId)
-                .then(
-                function success(response) {
-                    // if the call is successful, return the list of study guides
-                    vm.questionList = response.data;
-                     console.log(vm.questionList);
-                },
-                function failure(response) {
-                    console.log('Error retrieving User Entries from database!');
-                });
-        }
+        getAllQuestionsByStudyGuideId();
+
     }
-    
+
     initialize();
+    function getAllQuestionsByStudyGuideId() {
+        QuestionService.getAllQuestionsByStudyGuideId(userIdForQuestion, studyGuideId)
+            .then(
+            function success(response) {
+                // if the call is successful, return the list of study guides
+                vm.questionList = response.data.studyGuideQuestions;
+                console.log('dvhdfhdfhdfjdhfjdhfjd',vm.questionList);
+            },
+            function failure(response) {
+                console.log('Error retrieving User Entries from database!');
+            });
+    }
 
     vm.addNewQuestion = function () {
 
