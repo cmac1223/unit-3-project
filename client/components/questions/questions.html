@@ -9,8 +9,10 @@
     <br>
     <ol class='card'>
       <li class='card-content' ng-repeat='question in $ctrl.questionList.questions'>
+      <span class="t-d">
       Topic: {{question.topic}}<br>
       Difficulty: {{question.difficulty}}<br>
+      </span>
       Question: {{question.question}}<br>
       <button ng-click="visible = !visible">Toggle Answer</button><br>
       <span ng-show="visible = visible">Answer: {{question.answer}}</span>

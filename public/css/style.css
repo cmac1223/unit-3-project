@@ -4,6 +4,9 @@ body {
   background-repeart:no-repeat;
   text-align:center;
 }
+html {
+    padding: 20px;
+}
 h1 {
   font-size:80px;
   font-family:'Baloo', cursive;
@@ -38,6 +41,10 @@ form {
     color: rgb(0, 0, 0);
 }
 
+nav {
+    background-color: rgba(100,75,200,.11);
+}
+
 button.btn{
     color: rgb(0, 0, 0);
 }
@@ -51,17 +58,31 @@ li {
     font-size:40px;
     color: rgb(0, 0, 0);
 }
+
+ol {
+    padding: 0;
+}
+
 input.btn {
     background: url("http://www.clker.com/cliparts/x/u/B/A/8/Z/white-background-gold-button-hi.png")
 }
+
+.t-d {
+    font-size: 27px;
+    font-weight: 400;
+
+}
+
 div.newuser {
     color: rgb(0, 0, 0);
 }
+
 div.questions {
     font-size:40px
     font-family: 'Merriweather', serif;
     color: rgb(0, 0, 0);
 }
+
 #footer {
    position:fixed;
    left:0px;
@@ -70,4 +91,6 @@ div.questions {
    width:100%;
    background:#999;
 }
-
+.card{
+   background-color: rgba(100,75,200,.11);
+}
