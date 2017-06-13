@@ -1,11 +1,13 @@
 <div class="users">
   <section id="users">
     <!-- All your code goes inside this <section> -->
-
     <h1>This is the Users Page</h1>
 
-    <form ng-submit="$ctrl.addNewUser()">
+     <button class="btn" ng-click='visible = !visible'>Create New User</button>
 
+     <div ng-show="visible">
+
+    <form ng-submit="$ctrl.addNewUser()">
       <div class="name">
           <div>First Name<input type="text" ng-model="$ctrl.newUserFirstName" required></div>
           <div>Last Name <input type="text" ng-model="$ctrl.newUserLastName" required></div>
@@ -14,7 +16,7 @@
       </div>
           <div><input class="btn" type="submit" value="Add New User"></div>
     </form>
-
+  </div>
   <ol>
     <li ng-repeat='users in $ctrl.userEntries'>
       <h4>{{users.username}}</h4>
@@ -23,4 +25,3 @@
   </ol>
 </section>
 </div>
-

@@ -11,9 +11,14 @@ h1 {
 }
 
 h2 {
-    font-size:40px;
+    font-size:45px;
     font-family:'Sansita', cursive;
     color: rgb(0, 0, 0);
+}
+
+h4 {
+    font-size:40px;
+    font-family: 'Merriweather', serif;
 }
 
 button {
@@ -23,13 +28,14 @@ button {
 }
 
 p {
-  font-size:20px;
+  font-size:23px;
   color: black;
 }
 
 form {
-   font-size:20px;
-   color: rgb(0, 0, 0);
+    display: inline-block;
+    text-align: center;
+    color: rgb(0, 0, 0);
 }
 
 button.btn{
@@ -41,14 +47,20 @@ input.btn {
   }
 
 li {
+    list-style-type: none;
     font-size:40px;
     color: rgb(0, 0, 0);
 }
 input.btn {
     background: url("http://www.clker.com/cliparts/x/u/B/A/8/Z/white-background-gold-button-hi.png")
 }
-div.name {
-  color: rgb(0, 0, 0);
+div.newuser {
+    color: rgb(0, 0, 0);
+}
+div.questions {
+    font-size:40px
+    font-family: 'Merriweather', serif;
+    color: rgb(0, 0, 0);
 }
 #footer {
    position:fixed;
