@@ -20,7 +20,6 @@ router.get('/', (request, response) => {
     }
 
     // if there are no errors, send the users back as JSON
-    console.log(users);
     response.send(users);
   })
 
@@ -42,8 +41,6 @@ router.get('/:userId/', function (request, response) {
 
 });
 
-console.log('before post function')
-
 router.post('/', (request, response) => {
 
   // grab the new User info from the request
@@ -64,21 +61,16 @@ router.post('/', (request, response) => {
       console.log(error);
       return;
     }
-    console.log(newUser);
     // once the new user has been saved, return it to the client
     response.send(newUser);
   });
 });
-
-console.log('Testing before update function')
 
  //Edit user
  router.patch('/', function (request, response) {
    //console.log('Testing inside of patch function')
 
     let userToUpdate = request.body;
-
-    console.log('Testing to see what userToUpdate is ' + userToUpdate);
 
     User.findByIdAndUpdate(userToUpdate._id, userToUpdate, { new: true })
         .exec(function (error, updatedUser) {
@@ -87,9 +79,7 @@ console.log('Testing before update function')
                 console.log("Error while updating User with ID of " + userToUpdate.id);
                 return;
             }
-
             response.send(200);
-
         });
 });
 
@@ -104,10 +94,5 @@ console.log('Testing before update function')
         response.sendStatus(200);
     })
 });
-
-
-
-
-
 
 module.exports = router;

@@ -4,9 +4,10 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
 
     let vm = this;
     let userIdForStudyGuide = $stateParams.userId;
+    vm.userId = $stateParams.userId;
 
     function initialize() {
-
+        console.log(userIdForStudyGuide);
         getAllStudyGuidesByUserId();
 
     }
@@ -18,7 +19,6 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
             function success(response) {
                 // if the call is successful, return the list of study guides
                  vm.studyGuideList = response.data;
-                 console.log(vm.studyGuideList);
             },
             function failure(response) {
                 console.log('Error retrieving User Entries from database!');
@@ -44,7 +44,6 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
                 // only push to the userEntries array if the ajax call is successful
                 const newStudyGuide = response.data;
                 // vm.userEntries.push(newStudyGuide);
-                console.log(newStudyGuide);
                 // then reset the form so we can submit more users
                 resetForm();
 
@@ -58,8 +57,12 @@ function StudyGuidesController($http, $state, $stateParams, StudyGuidesService, 
     };
 
 
-     vm.openStudyGuide = function (userId) {
-         $state.go('study_guide/:userId/questions', { userId: userId });
+     vm.openStudyGuide = function (studyGuideId) {
+         console.log(studyGuideId);
+         console.log(userIdForStudyGuide);
+         $state.go('showStudyGuide', 
+            { userId: userIdForStudyGuide, 
+             studyGuideId: studyGuideId });
      }
 }
 

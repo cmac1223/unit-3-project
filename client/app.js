@@ -11,13 +11,13 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
             url: '/users',
             template: '<users></users>'
         })
-        .state('show_user/:userId', {
-            url: '/show_user/:userId',
+        .state('showUser', {
+            url: '/users/:userId',
             params: ['showId'],
             template: '<show-user></show-user>'
         })
-        .state('study_guide/:userId', {
-            url: '/study_guide/:userId',
+        .state('studyGuideIndex', {
+            url: '/users/:userId/studyGuide',
             params: [ 'userId' ],
             template: '<study-guide></study-guide>'
         })
@@ -25,8 +25,8 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
             url: '/articles',
             template: '<articles></articles>'
         })
-        .state('study_guide/:userId/questions', {
-            url: '/study_guide/:userId/questions',
+        .state('showStudyGuide', {
+            url: '/users/:userId/studyGuide/:studyGuideId/questions',
             template: '<questions></questions>'
         })
         // .state('show_expense/:expenseId', {

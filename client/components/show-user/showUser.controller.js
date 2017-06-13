@@ -55,7 +55,7 @@ function ShowUserController($state, $stateParams, UsersService) {
     }
     
      vm.showStudyGuide = function (userIdForStudyGuide) {
-        $state.go('study_guide/:userId', { userId: userIdForStudyGuide });
+        $state.go('studyGuideIndex', { userId: userIdForStudyGuide });
     }
 
 }
