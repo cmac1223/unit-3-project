@@ -66,7 +66,6 @@ router.delete('/:studyGuideId', (request, response) => {
 
             var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
                 indexOfStudyGuide = idx;
-                console.log(indexOfStudyGuide);
                 return sg._id == studyGuideId;
             });
             user.studyGuide.splice(indexOfStudyGuide, 1);
@@ -75,6 +74,7 @@ router.delete('/:studyGuideId', (request, response) => {
                     console.log(err);
                     return;
                 }
+                response.send('successfully deleted');
             });
         })
 });

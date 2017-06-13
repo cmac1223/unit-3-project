@@ -5,13 +5,6 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
 
     let vm = this;
 
-
-    /**
-     * We will run this function the first time we load our component.
-     *
-     * We can use an 'initialize' function to pre-load some data
-     * from the database.
-     */
     function initialize() {
         getAllUsers();
     }

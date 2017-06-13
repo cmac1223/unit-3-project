@@ -50,8 +50,7 @@ function ShowUserController($state, $stateParams, UsersService) {
                     // DO NOT delete the User from the Angular array if the
                     // user is not successfully deleted from the database
                     console.log('Error deleting User with ID of ' + userIdToDeleteFromDatabase);
-                }
-            )
+                })
     }
     
      vm.showStudyGuide = function (userIdForStudyGuide) {

@@ -15,17 +15,9 @@ function StudyGuidesService($http) {
         return $http.post('/users/'+userIdForStudyGuide+'/studyGuide/', newStudyGuide);
     }
 
-    // self.getSingleStudyGuideById = function (studyGuideIdToShow) {
-    //     return $http.get('users/studyGuides/' + studyGuideIdToShow)
-    // }
-
-    // self.updateSingleStudyGuide = function (studyGuideToUpdate) {
-    //     return $http.patch('studyGuides/', studyGuideToUpdate);
-    // }
-
-    // self.deleteIdFromDatabase = function (studyGuideIdToDeleteFromDatabase) {
-    //     return $http.delete('studyGuides/' + studyGuideIdToDeleteFromDatabase);
-    // }
+   self.deleteStudyGuideFromDatabase = function (userIdToDeleteFrom, studyGuideToDelete) {
+        return $http.delete('users/' + userIdToDeleteFrom +'/studyGuide/'+ studyGuideToDelete);
+    }
 }
 
 angular

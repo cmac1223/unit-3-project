@@ -53,6 +53,7 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
                 console.log('Error saving new Study Guide to database!');
             });
     };
+
 }
 
 module.exports = QuestionsController;
