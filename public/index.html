@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<h1>Trivia Trainer</h1>
 <html lang="en" ng-app="trivia-trainer">
 
 <head>
@@ -7,23 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Trainer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link rel="stylesheet" href="/css/style.css" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Play:700" rel="stylesheet">
 </head>
 
 <body>
 
-    <nav class="center-align">
-        <a class="btn" ui-sref="users">HOME</a>
-    </nav>
-
+  <nav>
+    <div class="nav-wrapper">
+      <a id='trivia-trainer'ui-sref="users" Trivia Trainer>Trivia Trainer</a>
+      <div id='nav-links'>
+      <ul>
+        <li> <a ui-sref="users"></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+        
     <ui-view></ui-view>
 
     <footer class="site-footer">
-        Project 3 by<strong> C-Force</strong> © 2017 Copyright
+        Created by<strong> C-Force</strong> © 2017 Copyright
     </footer>
 
     <script src="js/app.bundle.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+
+
+                    
 </body>
 
 </html>

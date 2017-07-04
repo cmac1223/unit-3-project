@@ -1,20 +1,22 @@
 <div>
   <section id="trivia">
 
-    <h1>TRIVIA: TEST YOURSELF!</h1>
+    <h3>TEST YOUR KNOWLEDGE</h3>
 <!--random trivia question generator-->
+<div class='card', id='trivia-card'>
     <span ng-click='visible = false'>
-  <button class="btn" ng-click='$ctrl.getTrivia()'>Get A Question</button>
+  <button class="btn" id='get-a-question' ng-click='$ctrl.getTrivia()'>Get A Question</button>
 </span>
     <ul>
-      <li>Title: {{$ctrl.trivia.category.title | uppercase}}</li>
+      <li><h5>TOPIC: {{$ctrl.trivia.category.title | uppercase}}</h5></li>
       <br>
-      <li>Question: {{$ctrl.trivia.question}}</li>
+      <li><h5>Question: {{$ctrl.trivia.question}}</h5></li>
       <br>
       <button class="btn" ng-click="visible = !visible">Toggle Answer</button>
       <br>
       <br>
-      <li ng-show="visible = visible">Answer: {{$ctrl.trivia.answer}}</li>
+      <li ng-show="visible = visible"><h5>Answer: {{$ctrl.trivia.answer}}</h5></li>
     </ul>
+</div>
   </section>
 </div>

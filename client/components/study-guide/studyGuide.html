@@ -1,29 +1,31 @@
 <div>
   <section id="studyGuides">
-
+<div class='card' id='study-guide-show-card'>
     <form ng-submit="$ctrl.addNewStudyGuide()">
-      <h1>STUDY GUIDE</h1>
     </form>
     <h1>
-      <h2>{{$ctrl.studyGuideList.username}}'s Study Guide Page</h2>
+      <h2>{{$ctrl.studyGuideList.username}}'s Study Guides</h2>
     </h1>
     <br>
-    <ol>
-      <li ng-repeat='studyGuide in $ctrl.studyGuideList.studyGuide'>
-        <button class="btn" ui-sref="showStudyGuide({userId: $ctrl.userId, studyGuideId: studyGuide._id})">{{studyGuide.title}}</button>
-        <button class="btn" ng-click="$ctrl.deleteStudyGuideFromDatabase(studyGuide._id)">Delete {{studyGuide.title}}</button>
-      </li>
-    </ol>
-
-    <hr>
-    <button ng-show='!visible' class="btn" ng-click='visible = true'>Add A New Study Guide</button>
-    <div class="card" ng-show='visible'>
+    <button class="btn" ng-click='visible = !visible'>Create A New Study Guide</button>
+    <div class="center" id='new-guide' ng-show='visible'>
       <div class="card-content">
         <form ng-submit="$ctrl.addNewStudyGuide()">
           <div>Title <input type="text" ng-model="$ctrl.newStudyGuideTitle"></div>
           <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Create</button>
         </form>
       </div>
+    </div>
+    <ol>
+      <li ng-repeat='studyGuide in $ctrl.studyGuideList.studyGuide'>
+        <button class="btn" id="btn-blue" ui-sref="showStudyGuide({userId: $ctrl.userId, studyGuideId: studyGuide._id})">{{studyGuide.title}}</button>
+        <button class="btn" id="btn-red" ng-show="Delete" ng-click="$ctrl.deleteStudyGuideFromDatabase(studyGuide._id)">Delete</button>
+      </li>
+    </ol>
+    <br>
+    <br>
+    <br>
+<a class='study-guide-delete-toggle' href ng-click="Delete = !Delete">Click to Delete A Study Guide</a>
     </div>
   </section>
 

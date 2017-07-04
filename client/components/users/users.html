@@ -1,27 +1,38 @@
 <div class="users">
   <section id="users">
     <!-- All your code goes inside this <section> -->
-    <h1>This is the Users Page</h1>
+  <div class="card" id='user-card'>
+    <h3>Trivia Trainer</h3>
+    <p>Put your knowledge to the test and become a trivia champion!</p>
 
-    <button class="btn" ng-click='visible = !visible'>Create New User</button>
+  <!-- Dropdown Trigger -->
+  <a class='dropdown-button btn' data-constrainWidth="false" data-activates='dropdown1'>Select a User</a>
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li ng-repeat='users in $ctrl.userEntries'><a ng-click="$ctrl.showUser(users._id)">{{users.username}}</a></li>
+  </ul>
+
+  <button class="btn" type="submit" ng-click='visible = !visible'>Create New User</button>
 
     <div ng-show="visible">
       <br>
-      <form ng-submit="$ctrl.addNewUser()">
+      <form name="newUser" ng-submit="$ctrl.addNewUser()">
         <div class="name">
           <div>First Name<input type="text" ng-model="$ctrl.newUserFirstName" required></div>
           <div>Last Name <input type="text" ng-model="$ctrl.newUserLastName" required></div>
-          <div>User Name<input type="text" ng-model="$ctrl.newUserUsername"></div>
-          <div>Email<input type="text" ng-model="$ctrl.newUserEmail"></div>
+          <div>User Name<input name=userName type="text" ng-minlength="20" ng-model="$ctrl.newUserUsername" required></div>
+          <h6 class='too-long' ng-if="newUser.userName.$valid">Username must be less than 20 characters</h6>
+          <div>Email<input type="text" ng-model="$ctrl.newUserEmail" required></div>
         </div>
-        <div><input class="btn" type="submit" value="Add New User"></div>
+        <button class="btn" type="submit" ng-click='visible = !visible' ng-show='true' value="Add New User">Submit</button>
+        
       </form>
     </div>
-    <ol>
-      <li ng-repeat='users in $ctrl.userEntries'>
-        <h4>{{users.username}}</h4>
-        <button class="btn" ng-click="$ctrl.showUser(users._id)">Show User</button>
-      </li>
-    </ol>
+    <div id='home-trivia'>
+    <p>Or try your hand at a random trivia question!</p>
+    <a ui-sref="trivia"><button class="btn">Test Yourself!</button></a>
+    </div>
+</div>
+</div>
   </section>
 </div>

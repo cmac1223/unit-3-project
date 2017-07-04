@@ -8,7 +8,6 @@ var QuestionSchema = new Schema({
     question: String,
     answer: String,
     topic: String,
-    difficulty: String,
 })
 
 var StudyGuideSchema = new Schema({

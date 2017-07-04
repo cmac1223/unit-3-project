@@ -18,7 +18,6 @@ var StudyGuideSchema = new Study({
             question: 'What is the name of the show actor/rapper Will Smith starred in?',
             answer: 'Fresh Prince of Bel Air',
             topic: '90s Trivia',
-            difficulty: 'Easy',
         }]
     }]
 

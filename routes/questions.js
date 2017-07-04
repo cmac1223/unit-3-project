@@ -16,7 +16,6 @@ router.post('/', function (request, response) {
     var newQuestionQuestion = request.body.question;
     var newQuestionAnswer = request.body.answer;
     var newQuestionTopic = request.body.topic;
-    var newQuestionDifficulty = request.body.difficulty
 
     // Find the User in the database we want to save the new Item for
     User.findById(userId)
@@ -26,7 +25,6 @@ router.post('/', function (request, response) {
                 question: newQuestionQuestion,
                 answer: newQuestionAnswer,
                 topic: newQuestionTopic,
-                difficulty: newQuestionDifficulty,
             }));
             //saves the new questions in the server
             newQuestion.save(function (err) {

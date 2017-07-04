@@ -1,38 +1,59 @@
-body {
-  background-image:url('https://static.vecteezy.com/system/resources/previews/000/101/241/non_2x/free-abstract-background-4-vector.jpg');
-  background-size:cover;
-  background-repeart:no-repeat;
-  text-align:center;
-}
 html {
-    padding: 20px;
+  text-align:center;
+  background: url(http://cdn.wallpapersafari.com/25/42/vLybmC.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+#trivia-trainer {
+    font-size: 40px;
+    font-family: 'Play', sans-serif;
+    font-weight: 600;
+}
+
+.center {
+    text-align: center;
+}
+
 h1 {
   font-size:80px;
-  font-family:'Baloo', cursive;
   color: rgb(0, 0, 0);
+  font-family: 'Play', sans-serif;
+}
+
+ol {
+    padding: 0px;
 }
 
 h2 {
     font-size:45px;
-    font-family:'Sansita', cursive;
     color: rgb(0, 0, 0);
+    font-family: 'Play', sans-serif;
 }
 
 h4 {
     font-size:40px;
-    font-family: 'Merriweather', serif;
+    font-family: 'Play', sans-serif;
 }
 
-button {
-    Font-size: 20px;
-    background-image: url("http://www.clker.com/cliparts/x/u/B/A/8/Z/white-background-gold-button-hi.png");
-    background-size: cover;
+h3 {
+    font-family: 'Play', sans-serif;
+}
+
+h5 {
+    font-family: 'Play', sans-serif;
+}
+
+h6 {
+    font-family: 'Play', sans-serif;
 }
 
 p {
   font-size:23px;
   color: black;
+  
 }
 
 form {
@@ -42,16 +63,9 @@ form {
 }
 
 nav {
-    background-color: rgba(100,75,200,.11);
+    background-color: rgba(255,255,255,.3);
+    text-align: center;
 }
-
-button.btn{
-    color: rgb(0, 0, 0);
-}
-
-input.btn {
-    color: rgb(0, 0, 0);
-  }
 
 li {
     list-style-type: none;
@@ -59,27 +73,12 @@ li {
     color: rgb(0, 0, 0);
 }
 
-ol {
-    padding: 0;
-}
-
-input.btn {
-    background: url("http://www.clker.com/cliparts/x/u/B/A/8/Z/white-background-gold-button-hi.png")
-}
-
 .t-d {
     font-size: 27px;
     font-weight: 400;
-
 }
 
 div.newuser {
-    color: rgb(0, 0, 0);
-}
-
-div.questions {
-    font-size:40px
-    font-family: 'Merriweather', serif;
     color: rgb(0, 0, 0);
 }
 
@@ -92,5 +91,110 @@ div.questions {
    background:#999;
 }
 .card{
-   background-color: rgba(100,75,200,.11);
+   background-color: rgba(255,255,255,.3);
+}
+
+#user-card {
+    min-height: 400px;
+    margin: 2vw;
+    padding: 10px;
+}
+
+#user-show-card {
+    min-height: 400px;
+    margin: 2vw;
+    padding: 10px;
+}
+
+#trivia-card {
+    min-height: 400px;
+    margin: 0 10vw 2vw 10vw;
+    padding: 10px;
+}
+
+#home-trivia {
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+#get-a-question {
+    margin: 10px;
+}
+.too-long {
+    color: red;
+}
+
+#study-guide-show-card {
+    min-height: 400px;
+    margin: 25px 10vw 2vw 10vw;
+    padding: 10px;
+}
+
+#question-card {
+    min-height: 400px;
+    width: 90vw;
+    margin: 10px 5vw;
+    padding: 10px;
+}
+
+#individual-question {
+    min-height: 200px;
+    padding: 10px;
+}
+
+#questions input[type=text] {
+   width: 300px;
+}
+
+#delete-question {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+}
+
+.study-guide-delete-toggle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    color: rgba(255,0,0,.8)
+}
+
+.show-user-four-buttons button {
+    width: 100px;
+    font-size: 11px;
+    padding: 0px;
+}
+
+#btn-blue {
+    background-color: rgba(10,10,255,.8)
+}
+
+#btn-red {
+    background-color: rgba(255,10,10,.8);
+    width: 65px;
+    padding: 2px;
+    text-align: center;
+}
+
+    @media (max-width: 500px) {
+    .show-user-four-buttons button {
+        display: block;
+        margin: 5px auto;
+        width: 150px;
+}       
+    .user-show-info h2{
+        font-size: 30px;
+    }
+
+    .user-show-info p{
+        font-size: 17px;
+    }
 }

@@ -1,38 +1,33 @@
 <div>
   <section id="questions">
+    <div class='card' id='question-card'>
+      <h1>
+        <h3><strong>{{$ctrl.questionList.title}}</strong></h3>
+      </h1>
+      <br>
 
-    <h1>
-      <h2>{{$ctrl.questionList.title}} Study Guide</h2>
-    </h1>
-    <br>
-    <ol class='card'>
-      <li class='card-content' ng-repeat='question in $ctrl.questionList.questions'>
-        <span class="t-d">
-        <button class="btn" ng-click="$ctrl.deleteQuestionFromDatabase(question._id)">Delete (-)</button>
-      Topic: {{question.topic}}<br>
-      Difficulty: {{question.difficulty}}<br>
-      </span> Question: {{question.question}}<br>
-        <!--sick toggle action-->
-        <button ng-click="visible = !visible">Toggle Answer</button><br>
-        <span ng-show="visible = visible">Answer: {{question.answer}}</span>
+
+      <button class="btn" type="submit" ng-click='visible = !visible'>Add A New Question</button>
+      <div ng-show="visible">
         <br>
-      </li>
-    </ol>
-
-    <hr>
-    <button ng-show='!visible' class="btn" ng-click='visible = true'>Add A New Question</button>
-    <div class="card" ng-show='visible'>
-      <div class="card-content">
-        <div class="questions">
-          <form ng-submit="$ctrl.addNewQuestion()">
-            <div>Question <input type="text" ng-model="$ctrl.newQuestion.question"></div>
-            <div>Answer <input type="text" ng-model="$ctrl.newQuestion.answer"></div>
-            <div>Topic <input type="text" ng-model="$ctrl.newQuestion.topic"></div>
-            <div>Difficulty <input type="text" ng-model="$ctrl.newQuestion.difficulty"></div>
-            <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Add Question</button>
-          </form>
-        </div>
+        <form ng-submit="$ctrl.addNewQuestion()">
+          <div id='questions'>
+            <div>Question: <input type="text" ng-model="$ctrl.newQuestion.question" required></div>
+            <div>Answer: <input type="text" ng-model="$ctrl.newQuestion.answer" required></div>
+            <div>Topic: <input type="text" ng-model="$ctrl.newQuestion.topic"></div>
+          </div>
+          <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Add Question</button>
+        </form>
       </div>
-    </div>
+
+      <div class='card-content' ng-repeat='question in $ctrl.questionList.questions'>
+        <div class='card' id='individual-question'>
+              <p>Topic: {{question.topic}}<p>
+              <h5>Question: {{question.question}}</h5>
+          <!--sick toggle action-->
+          <button class='btn' ng-click="visible = !visible">Toggle Answer</button><br>
+          <p id='delete-question' ng-click="$ctrl.deleteQuestionFromDatabase(question._id)">(-) Delete Question</p>
+          <span ng-show="visible = visible"><h5>Answer: {{question.answer}}<h5></span>
+        </div>
   </section>
-</div>
+  </div>
