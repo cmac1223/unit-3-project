@@ -28,7 +28,7 @@ router.post('/', function (request, response) {
                 topic: newQuestionTopic,
                 difficulty: newQuestionDifficulty,
             }));
-//saves the new questions in the server
+            //saves the new questions in the server
             newQuestion.save(function (err) {
                 if (err) {
                     console.log(err);
@@ -74,5 +74,35 @@ router.get('/', (request, response) => {
         });
 });
 
+//study guide delete route
+router.delete('/:questionId', (request, response) => {
+
+    var userId = request.params.userId;
+    var studyGuideId = request.params.studyGuideId;
+    var questionId = request.params.questionId;
+
+    User.findById(userId)
+        .exec(function (err, user) {
+
+            var indexOfStudyGuide = '';
+
+            var studyGuideSearchResult = user && user.studyGuide.find(function (sg, idx) {
+                var studyGuideToSearch = user.studyGuide[idx]
+                var questionSearchResut = user && studyGuideToSearch.questions.find(function (question, index) {
+                    indexOfQuestion = index;
+                    return question._id == questionId;
+                })
+                user.studyGuide[idx].questions.splice(indexOfQuestion, 1);
+                user.save(function (err) {
+                    if (err) {
+                        console.log(err);
+                        return;
+                    }
+                    response.send('successfully deleted');
+
+                });
+            })
+        });
+});
 
 module.exports = router;

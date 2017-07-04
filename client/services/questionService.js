@@ -15,7 +15,11 @@ function QuestionService($http) {
         return $http.post('/users/' + userIdForStudyGuide + '/studyGuide/' + studyGuideId + '/questions', newStudyGuide);
     }
 
+    self.deleteQuestionFromDatabase = function (userIdToDeleteFrom, studyGuideIdToDeleteFrom, questionToDelete) {
+            return $http.delete('users/' + userIdToDeleteFrom + '/studyGuide/' + studyGuideIdToDeleteFrom + '/questions/' + questionToDelete);
+        }
 }
+
 
 angular
     .module('trivia-trainer')

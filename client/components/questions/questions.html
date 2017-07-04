@@ -8,6 +8,7 @@
     <ol class='card'>
       <li class='card-content' ng-repeat='question in $ctrl.questionList.questions'>
         <span class="t-d">
+        <button class="btn" ng-click="$ctrl.deleteQuestionFromDatabase(question._id)">Delete (-)</button>
       Topic: {{question.topic}}<br>
       Difficulty: {{question.difficulty}}<br>
       </span> Question: {{question.question}}<br>

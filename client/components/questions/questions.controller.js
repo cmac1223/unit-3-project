@@ -47,10 +47,24 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
             },
             function failure(response) {
 
-                console.log('Error saving new Study Guide to database!');
+                console.log('Error saving new Question to database!');
             });
     };
-
+    //delete the question
+        vm.deleteQuestionFromDatabase = function (questionToDelete) {
+            console.log("button pressed")
+            let userIdToDeleteFrom = $stateParams.userId;
+            let studyGuideIdToDeleteFrom = $stateParams.studyGuideId;
+            QuestionService.deleteQuestionFromDatabase(userIdToDeleteFrom, studyGuideIdToDeleteFrom, questionToDelete)
+                .then(
+                function success(response) {
+                    getAllQuestionsByStudyGuideId()
+                    console.log('question deleted from database!');
+                },
+                function failure(response) {
+                    console.log('this is a failure');
+                })
+        }
 }
 
 module.exports = QuestionsController;
