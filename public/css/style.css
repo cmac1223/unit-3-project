@@ -184,6 +184,14 @@ div.newuser {
     text-align: center;
 }
 
+#show-user-card a {
+    color: rgba(0,0,0,.7)
+}
+
+#show-user-card a:hover {
+    color: rgba(150,255,200,.7)
+}
+
     @media (max-width: 500px) {
     .show-user-four-buttons button {
         display: block;
@@ -196,5 +204,9 @@ div.newuser {
 
     .user-show-info p{
         font-size: 17px;
+    }
+
+    .user-button {
+        margin:10px;
     }
 }

@@ -32,8 +32,11 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
         // this function can be used to clear the shows form
         //resets the form after a new question was entered
         function resetForm() {
-            vm.newQuestion = '';
+            vm.newQuestion = null;
+            vm.newAnswer = null;
+            vm.newTopic = null;
         }
+       
 
         // Make an ajax call to save the new User to the database:
         QuestionService.addNewQuestion(userIdForQuestion, studyGuideId, vm.newQuestion)
@@ -43,6 +46,8 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
                 const newQuestion = response.data;
 //resets the page in order to show the new question
                 getAllQuestionsByStudyGuideId()
+                resetForm()
+
 
             },
             function failure(response) {

@@ -5,15 +5,17 @@
     <h3>Trivia Trainer</h3>
     <p>Put your knowledge to the test and become a trivia champion!</p>
 
-  <!-- Dropdown Trigger -->
-  <a class='dropdown-button btn' data-constrainWidth="false" data-activates='dropdown1'>Select a User</a>
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
+  <!-- Show Users Toggle -->
+<button class="btn user-button" id="btn-blue" ng-click="users = !users">Select A User</button>  
+<!-- Dropdown Structure -->
+<div id='show-user-card' ng-show='users'>
+  <ul>
     <li ng-repeat='users in $ctrl.userEntries'><a ng-click="$ctrl.showUser(users._id)">{{users.username}}</a></li>
   </ul>
+</div>
 
+<!-- New User -->
   <button class="btn" type="submit" ng-click='visible = !visible'>Create New User</button>
-
     <div ng-show="visible">
       <br>
       <form name="newUser" ng-submit="$ctrl.addNewUser()">
