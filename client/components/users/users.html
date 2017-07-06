@@ -22,8 +22,7 @@
         <div class="name">
           <div>First Name<input type="text" ng-model="$ctrl.newUserFirstName" required></div>
           <div>Last Name <input type="text" ng-model="$ctrl.newUserLastName" required></div>
-          <div>User Name<input name=userName type="text" ng-minlength="20" ng-model="$ctrl.newUserUsername" required></div>
-          <h6 class='too-long' ng-if="newUser.userName.$valid">Username must be less than 20 characters</h6>
+          <div>User Name<input name=userName type="text" ng-model="$ctrl.newUserUsername" required></div>
           <div>Email<input type="text" ng-model="$ctrl.newUserEmail" required></div>
         </div>
         <button class="btn" type="submit" ng-click='visible = !visible' ng-show='true' value="Add New User">Submit</button>

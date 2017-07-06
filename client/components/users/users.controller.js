@@ -4,12 +4,12 @@ UsersController.$inject = ['$http', '$state', '$stateParams', 'UsersService', '$
 function UsersController($http, $state, $stateParams, UsersService, $scope) {
 
     let vm = this;
-//this is what runs as the page loads
+    //this is what runs as the page loads
     function initialize() {
         getAllUsers();
     }
     initialize();
-//get all users to render on the page
+    //get all users to render on the page
     function getAllUsers() {
         UsersService.getAllUsers()
             .then(
@@ -33,10 +33,11 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
             username: vm.newUserUsername,
             email: vm.newUserEmail
         };
-//add a new user
+        //add a new user
         UsersService.addNewUser(newUser)
             .then(
             function success(response) {
+                console.log('user saved')
                 // only push to the userEntries array if the ajax call is successful
                 const newUser = response.data;
                 vm.userEntries.push(newUser);
@@ -57,7 +58,7 @@ function UsersController($http, $state, $stateParams, UsersService, $scope) {
         }
         resetForm();
     };
-//renders the show user page on click
+    //renders the show user page on click
     vm.showUser = function (userId) {
         $state.go('showUser', { userId: userId });
     }
