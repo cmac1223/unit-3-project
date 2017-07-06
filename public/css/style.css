@@ -173,15 +173,31 @@ div.newuser {
     padding: 0px;
 }
 
+.btn {
+     background-color: rgba(0,75,75,.7)
+}
+
+.btn:hover {
+     background-color: rgba(0,75,75,.9)
+}
+
 #btn-blue {
-    background-color: rgba(10,10,255,.8)
+    background-color: rgba(10,75,255,.7);
+}
+
+#btn-blue:hover { 
+    background-color: rgba(10,10,255,.8);
 }
 
 #btn-red {
-    background-color: rgba(255,10,10,.8);
+    background-color: rgba(200,0,0,.7);
     width: 65px;
     padding: 2px;
     text-align: center;
+}
+
+#btn-red:hover { 
+    background-color: rgba(225,0,0,.9);
 }
 
 #show-user-card a {
