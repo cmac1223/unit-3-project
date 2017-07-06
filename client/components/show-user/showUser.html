@@ -1,18 +1,18 @@
 <div class="container">
     <div class='card', id='user-show-card'>
         <div class='user-show-info'>
-        <h2 id='users-page'>{{$ctrl.userEntry.username}}'s Trivia Trainer Page</h2>
-        <p>ID: {{$ctrl.userEntry._id}}</p>
+        <h4 id='users-page'>{{$ctrl.userEntry.username}}'s Profile</h4>
         <p>Name: {{$ctrl.userEntry.first_name}} {{$ctrl.userEntry.last_name}}</p>
         <p>Email: {{$ctrl.userEntry.email}}</p>
+        <p>User ID: {{$ctrl.userEntry._id}}</p>
         </div>
         <div class='show-user-four-buttons'>
-        <button class="btn" ng-click="visible = !visible">Edit</button>
-        <span><a ui-sref="users">
-    <button class="btn" ng-click="$ctrl.deleteUser($ctrl.userEntry._id)">Delete</button>
-    </a></span>
-        <a ui-sref="trivia"><button class="btn">TRIVIA</button></a>
         <button class="btn" ng-click="$ctrl.showStudyGuide($ctrl.userEntry._id)">Study Guide</button>
+        <a ui-sref="trivia"><button class="btn">TRIVIA</button></a>
+        <span><a ui-sref="users"><br>
+        <button class="btn" id="study-guide-delete" ng-click="$ctrl.deleteUser($ctrl.userEntry._id)">Delete</button>
+        </a></span>
+        <button class="btn" id="btn-blue" ng-click="visible = !visible">Edit</button>
         </div>
         <!--this is the button for the articles page - it will be active but not currently-->
         <!--<a ui-sref="articles"><button class="btn">Articles</button></a>-->

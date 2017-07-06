@@ -8,7 +8,7 @@ html {
 }
 
 #trivia-trainer {
-    font-size: 40px;
+    font-size: 50px;
     font-family: 'Play', sans-serif;
     font-weight: 600;
 }
@@ -168,9 +168,10 @@ div.newuser {
 }
 
 .show-user-four-buttons button {
-    width: 100px;
+    width: 150px;
     font-size: 11px;
     padding: 0px;
+    margin: 5px;
 }
 
 .btn {
@@ -206,6 +207,14 @@ div.newuser {
 
 #show-user-card a:hover {
     color: rgba(150,255,200,.7)
+}
+
+#study-guide-delete {
+    background-color: rgba(200,0,0,.7);
+}
+
+#study-guide-delete:hover {
+     background-color: rgba(225,0,0,.9);
 }
 
     @media (max-width: 500px) {
