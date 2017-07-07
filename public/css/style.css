@@ -1,6 +1,6 @@
 html {
   text-align:center;
-  background: url(http://cdn.wallpapersafari.com/25/42/vLybmC.jpg) no-repeat center center fixed; 
+  background: url(http://cdn.wallpapersafari.com/25/42/vLybmC.jpg); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -217,7 +217,13 @@ div.newuser {
      background-color: rgba(225,0,0,.9);
 }
 
-    @media (max-width: 500px) {
+    @media all and (max-width: 500px) {
+
+    body {
+    background-size: cover; /* stretches to size of viewport */
+    background-position: center; /* center the bg image */
+  }
+    
     .show-user-four-buttons button {
         display: block;
         margin: 5px auto;
@@ -233,5 +239,6 @@ div.newuser {
 
     .user-button {
         margin:10px;
+
     }
 }
