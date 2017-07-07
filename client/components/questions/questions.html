@@ -1,33 +1,30 @@
 <div>
   <section id="questions">
     <div class='card' id='question-card'>
-      <h1>
-        <h3><strong>{{$ctrl.questionList.title}}</strong></h3>
-      </h1>
+      <h3><strong>{{$ctrl.questionList.title}}</strong></h3>
       <br>
-
-
       <button class="btn" type="submit" ng-click='visible = !visible'>Add A New Question</button>
-      <div ng-show="visible">
+        <div ng-show="visible">
         <br>
-        <form ng-submit="$ctrl.addNewQuestion()">
-          <div id='questions'>
-            <div>Question: <input type="text" ng-model="$ctrl.newQuestion.question" required></div>
-            <div>Answer: <input type="text" ng-model="$ctrl.newQuestion.answer" required></div>
-            <div>Topic: <input type="text" ng-model="$ctrl.newQuestion.topic"></div>
-          </div>
-          <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Submit</button>
-        </form>
-      </div>
-
+          <form ng-submit="$ctrl.addNewQuestion()">
+            <div id='questions'>
+              <div>Question: <input type="text" ng-model="$ctrl.newQuestion.question" required></div>
+              <div>Answer: <input type="text" ng-model="$ctrl.newQuestion.answer" required></div>
+              <div>Topic: <input type="text" ng-model="$ctrl.newQuestion.topic"></div>
+            </div>
+            <button class="btn" type="submit" ng-click="visible = !visible" value="Create">Submit</button>
+          </form>
+        </div>
       <div class='card-content' ng-repeat='question in $ctrl.questionList.questions'>
         <div class='card' id='individual-question'>
-              <p>Topic: {{question.topic}}<p>
-              <h5>Question: {{question.question}}</h5>
+          <p>Topic: {{question.topic}}</p>
+          <h5>Question: {{question.question}}</h5>
           <!--sick toggle action-->
           <button class='btn' ng-click="visible = !visible">Toggle Answer</button><br>
           <p id='delete-question' ng-click="$ctrl.deleteQuestionFromDatabase(question._id)">(-) Delete Question</p>
           <span ng-show="visible = visible"><h5>Answer: {{question.answer}}<h5></span>
-        </div>
+        </div> 
+      </div>   
+    </div>
   </section>
-  </div>
+</div>
