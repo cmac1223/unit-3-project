@@ -65,7 +65,6 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
                 function success(response) {
                     console.log('question deleted from database!');
                      getAllQuestionsByStudyGuideId();
-                     initialize()
                 },
                 function failure(response) {
                     console.log('this is a failure');
