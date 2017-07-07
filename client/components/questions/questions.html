@@ -21,8 +21,8 @@
           <h5>Question: {{question.question}}</h5>
           <!--sick toggle action-->
           <button class='btn' ng-click="visible = !visible">Toggle Answer</button><br>
-          <p id='delete-question' ng-click="$ctrl.deleteQuestionFromDatabase(question._id)">(-) Delete Question</p>
           <span ng-show="visible = visible"><h5>Answer: {{question.answer}}<h5></span>
+          <p id='delete-question' ng-click="$ctrl.deleteQuestionFromDatabase(question._id)">(-) Delete Question</p>
         </div> 
       </div>   
     </div>
