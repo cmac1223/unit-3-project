@@ -5,6 +5,14 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+
 }
 
 #trivia-trainer {
@@ -215,6 +223,15 @@ div.newuser {
 
 #study-guide-delete:hover {
      background-color: rgba(225,0,0,.9);
+}
+
+#question-delete-container {
+    margin-top: 10px;
+    color: rgba(215,0,0,.7);
+}
+
+#question-delete-container p:hover {
+    color: rgba(215,0,0,.9);
 }
 
     @media all and (max-width: 500px) {
