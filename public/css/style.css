@@ -172,7 +172,7 @@ div.newuser {
     margin-left: auto;
     margin-right: auto;
     font-size: 14px;
-    color: rgba(255,0,0,.8)
+    color: rgba(255,0,0,.5)
 }
 
 .show-user-four-buttons button {
@@ -199,7 +199,7 @@ div.newuser {
 }
 
 #btn-red {
-    background-color: rgba(200,0,0,.7);
+    background-color: rgba(200,0,0,.5);
     width: 65px;
     padding: 2px;
     text-align: center;
