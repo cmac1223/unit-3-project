@@ -206,7 +206,7 @@ div.newuser {
 }
 
 #btn-red:hover { 
-    background-color: rgba(225,0,0,.9);
+    background-color: rgba(225,0,0,.8);
 }
 
 #show-user-card a {
@@ -218,20 +218,20 @@ div.newuser {
 }
 
 #study-guide-delete {
-    background-color: rgba(200,0,0,.7);
+    background-color: rgba(200,0,0,.5);
 }
 
 #study-guide-delete:hover {
-     background-color: rgba(225,0,0,.9);
+     background-color: rgba(225,0,0,.8);
 }
 
 #question-delete-container {
     margin-top: 10px;
-    color: rgba(215,0,0,.7);
+    color: rgba(215,0,0,.5);
 }
 
 #question-delete-container p:hover {
-    color: rgba(215,0,0,.9);
+    color: rgba(215,0,0,.8);
 }
 
     @media all and (max-width: 500px) {
