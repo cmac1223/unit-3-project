@@ -69,7 +69,7 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
                 function failure(response) {
                     console.log('this is a failure');
                 })
-        }
+        } 
 }
 
 module.exports = QuestionsController;

@@ -72,7 +72,7 @@ router.get('/', (request, response) => {
         });
 });
 
-//study guide delete route
+//question delete route
 router.delete('/:questionId', (request, response) => {
 
     var userId = request.params.userId;
