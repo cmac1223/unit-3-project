@@ -172,6 +172,17 @@ div.newuser {
     margin-left: auto;
     margin-right: auto;
     font-size: 14px;
+    color: rgba(0,0,0,.8)
+}
+
+.https-warning {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+	right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
     color: rgba(255,0,0,.5)
 }
 
