@@ -1,3 +1,6 @@
+// Add local environment config
+require('dotenv').config();
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -19,8 +22,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Add local environment config
-require('dotenv').config();
 
 // Mongoose stuff
 var mongoose = require('mongoose');
