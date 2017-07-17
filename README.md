@@ -4,7 +4,9 @@ Trivia Trainer is an MEAN-STACK (MongoDB, ExpressJS, Angular, and Node.js)  app 
 
 tools used: MongoDB, ExpressJS, Angular, and Node.js
 
+
 styling: Materialize and CSS
+
 
 Trello:
 
@@ -13,7 +15,7 @@ https://trello.com/b/nkIuZSnO/wdi-project-3
 
 Heroku
 
-http://gentle-thicket-35690.herokuapp.com/#!/users
+http://trivia-trainer-app.heroku.com
 
 
 

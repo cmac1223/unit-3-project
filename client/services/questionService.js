@@ -4,10 +4,8 @@ function QuestionService($http) {
     var self = this;
 //makes the http calls for questions
     self.getAllQuestionsByStudyGuideId = function (userIdForQuestion, studyGuideId) {
-console.log(userIdForQuestion, studyGuideId)
         return $http.get('/users/' + userIdForQuestion + '/studyGuide/' + studyGuideId + '/questions')
             .then(function (response) {
-console.log('response',response)
                 return response;
             });
     }

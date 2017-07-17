@@ -57,7 +57,6 @@ function QuestionsController($http, $state, $stateParams, QuestionService, $scop
     };
     //delete the question
         vm.deleteQuestionFromDatabase = function (questionToDelete) {
-            console.log("button pressed")
             let userIdToDeleteFrom = $stateParams.userId;
             let studyGuideIdToDeleteFrom = $stateParams.studyGuideId;
             QuestionService.deleteQuestionFromDatabase(userIdToDeleteFrom, studyGuideIdToDeleteFrom, questionToDelete)
