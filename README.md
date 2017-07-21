@@ -26,12 +26,33 @@ https://github.com/clarkwaite/unit-3-project.git
 
 
 ERDs
- ![alt text](http://i.imgur.com/tWZX87a.jpg)
+
+ User Page
+ ![alt text](http://i.imgur.com/H90BDHZ.jpg)
  
- ![alt text](http://i.imgur.com/e7TxOYB.jpg)
  
- ![alt text](http://i.imgur.com/ohhJOjQ.jpg)
+ User Edit Page
+ ![Imgur](http://i.imgur.com/zW6cyy5.jpg)
+ 
+ Study Guide Page
+ ![alt text](http://i.imgur.com/nhTcY7R.jpg)
+ 
+ 
+ Study Guide Title Page
+ ![Imgur](http://i.imgur.com/5XvHc4B.jpg)
+ 
+ 
+ Study Guide Add Question Page
+ ![Imgur](http://i.imgur.com/1oH1fV6.jpg)
+ 
+ Trivia Page Question Page
+ ![alt text](http://i.imgur.com/cUhUS8h.jpg)
+ 
+ Trivia Main Page
+ ![alt text](http://i.imgur.com/h4gDYuN.jpg)
+ 
  
  
  Wire Frame
  ![alt text](http://i.imgur.com/VmpTQnQ.jpg)
+
