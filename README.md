@@ -42,6 +42,10 @@ ERDs
  ![Imgur](http://i.imgur.com/5XvHc4B.jpg)
  
  
+ Study Guide Question
+ ![Imgur](http://i.imgur.com/KrsHMP7.jpg)
+ 
+ 
  Study Guide Add Question Page
  ![Imgur](http://i.imgur.com/1oH1fV6.jpg)
  
