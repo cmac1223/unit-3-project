@@ -35,7 +35,7 @@ ERDs
  ![Imgur](http://i.imgur.com/zW6cyy5.jpg)
  
  Study Guide Page
- ![alt text](http://i.imgur.com/nhTcY7R.jpg)
+ ![alt text](http://i.imgur.com/J5kcob6.jpg)
  
  
  Study Guide Title Page
