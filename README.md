@@ -32,7 +32,7 @@ ERDs
  
  
  User Edit Page
- ![Imgur](http://i.imgur.com/zW6cyy5.jpg)
+ ![Imgur](http://i.imgur.com/IzkAkLa.jpg)
  
  Study Guide Page
  ![alt text](http://i.imgur.com/J5kcob6.jpg)
