@@ -28,7 +28,7 @@ https://github.com/clarkwaite/unit-3-project.git
 ERDs
 
  User Page
- ![alt text](http://i.imgur.com/H90BDHZ.jpg)
+ ![alt text](http://i.imgur.com/KXdlE4y.jpg)
  
  
  User Edit Page
