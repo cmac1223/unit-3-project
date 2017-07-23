@@ -49,7 +49,7 @@ ERDs
  ![alt text](http://i.imgur.com/cUhUS8h.jpg)
  
  Trivia Main Page
- ![alt text](http://i.imgur.com/h4gDYuN.jpg)
+ ![alt text](http://i.imgur.com/jyWwp1E.jpg)
  
  
  
