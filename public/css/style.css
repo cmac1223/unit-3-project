@@ -1,6 +1,7 @@
 html {
   text-align:center;
-  background: url(http://cdn.wallpapersafari.com/25/42/vLybmC.jpg); 
+  background: url('rid2.jpg'); 
+  /* background: url(http://cdn.wallpapersafari.com/25/42/vLybmC.jpg);  */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,6 +20,7 @@ html {
     font-size: 50px;
     font-family: 'Play', sans-serif;
     font-weight: 600;
+    color: rgb(89, 17, 145)
 }
 
 .center {
@@ -27,7 +29,7 @@ html {
 
 h1 {
   font-size:80px;
-  color: rgb(0, 0, 0);
+  color: rgb(89, 17, 145);
   font-family: 'Play', sans-serif;
 }
 
@@ -37,7 +39,7 @@ ol {
 
 h2 {
     font-size:45px;
-    color: rgb(0, 0, 0);
+    color: rgb(204, 151, 244);
     font-family: 'Play', sans-serif;
 }
 
@@ -60,7 +62,7 @@ h6 {
 
 p {
   font-size:23px;
-  color: black;
+  color: rgb(204, 151, 244);
   
 }
 
@@ -71,14 +73,15 @@ form {
 }
 
 nav {
-    background-color: rgba(255,255,255,.3);
+    background-color: rgba(32,244,17,.3);
     text-align: center;
 }
 
+/* names on landing page */
 li {
     list-style-type: none;
     font-size:40px;
-    color: rgb(0, 0, 0);
+    color: rgb(204, 151, 244);
 }
 
 .t-d {
@@ -87,7 +90,7 @@ li {
 }
 
 div.newuser {
-    color: rgb(0, 0, 0);
+    color: rgb(204, 151, 244);
 }
 
 #footer {
@@ -99,7 +102,7 @@ div.newuser {
    background:#999;
 }
 .card{
-   background-color: rgba(255,255,255,.3);
+    background-color: rgba(255,255,255,.1); 
 }
 
 #user-card {
@@ -118,6 +121,11 @@ div.newuser {
     min-height: 400px;
     margin: 0 10vw 2vw 10vw;
     padding: 10px;
+}
+
+.name {
+    background-color: rgba(204, 151, 244, .2);
+    
 }
 
 #home-trivia {
@@ -194,11 +202,11 @@ div.newuser {
 }
 
 .btn {
-     background-color: rgba(0,75,75,.7)
+     background-color: rgba(204,151,244,.3)
 }
 
 .btn:hover {
-     background-color: rgba(0,75,75,.9)
+     background-color: rgba(32,244,17,.9)
 }
 
 #btn-blue {

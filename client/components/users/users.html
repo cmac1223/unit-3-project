@@ -20,12 +20,12 @@
       <br>
       <form name="newUser" ng-submit="$ctrl.addNewUser()">
         <div class="name">
-          <div>First Name<input type="text" ng-model="$ctrl.newUserFirstName" required></div>
+          <div>Name<input type="text" ng-model="$ctrl.newUserFirstName" required></div>
           <div>Last Name <input type="text" ng-model="$ctrl.newUserLastName" required></div>
           <div>User Name<input name=userName type="text" ng-model="$ctrl.newUserUsername" required></div>
           <div>Email<input type="text" ng-model="$ctrl.newUserEmail" required></div>
         </div>
-        <button class="btn" type="submit" ng-click='visible = !visible' ng-show='true' value="Add New User">Submit</button>
+        <button class="btn" type="submit" ng-click='visible = !visible' ng-show='true' value="Add New User" ui-sref="users">Submit</button>
         
       </form>
     </div>
