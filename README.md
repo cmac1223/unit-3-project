@@ -47,7 +47,7 @@ ERDs
  
  
  Study Guide Add Question Page
- ![Imgur](http://i.imgur.com/1oH1fV6.jpg)
+ ![Imgur](http://i.imgur.com/4yrjrI9.jpg)
  
  Trivia Page Question Page
  ![alt text](http://i.imgur.com/aPkY06f.jpg)
