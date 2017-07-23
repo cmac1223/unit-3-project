@@ -50,7 +50,7 @@ ERDs
  ![Imgur](http://i.imgur.com/1oH1fV6.jpg)
  
  Trivia Page Question Page
- ![alt text](http://i.imgur.com/cUhUS8h.jpg)
+ ![alt text](http://i.imgur.com/aPkY06f.jpg)
  
  Trivia Main Page
  ![alt text](http://i.imgur.com/mzoSOYa.jpg)
