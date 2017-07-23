@@ -210,11 +210,11 @@ div.newuser {
 }
 
 #btn-blue {
-    background-color: rgba(10,75,255,.7);
+    background-color: rgba(32,244,17,.9);
 }
 
 #btn-blue:hover { 
-    background-color: rgba(10,10,255,.8);
+    background-color: rgba(132,244,17,.9);
 }
 
 #btn-red {
