@@ -39,7 +39,7 @@ ERDs
  
  
  Study Guide Title Page
- ![Imgur](http://i.imgur.com/5XvHc4B.jpg)
+ ![Imgur](http://i.imgur.com/ALtUeau.jpg)
  
  
  Study Guide Question
