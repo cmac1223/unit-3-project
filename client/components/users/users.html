@@ -1,39 +1,82 @@
 <div class="users">
   <section id="users">
     <!-- All your code goes inside this <section> -->
-  <div class="card" id='user-card'>
-    <h3>Trivia Trainer</h3>
-    <p>Put your knowledge to the test and become a trivia champion!</p>
+    <div class="card" id='user-card'>
+      <h3>Trivia Trainer</h3>
+      <p>Put your knowledge to the test and become a trivia champion!</p>
 
-  <!-- Show Users Toggle -->
-<button class="btn user-button" id="btn-blue" ng-click="users = !users">Select A User</button>  
-<!-- Dropdown Structure -->
-<div id='show-user-card' ng-show='users'>
-  <ul>
-    <li ng-repeat='users in $ctrl.userEntries'><a ng-click="$ctrl.showUser(users._id)"><h5>{{users.username}}</h5></a></li>
-  </ul>
-</div>
+      <!-- Show Users Toggle -->
+      <button class="btn user-button" id="btn-blue" ng-click="users = !users">Select A User</button>
+      <!-- Dropdown Structure -->
+      <div id='show-user-card' ng-show='users'>
+        <ul>
+          <li ng-repeat='users in $ctrl.userEntries'>
+            <a ng-click="$ctrl.showUser(users._id)">
+              <h5>{{users.username}}</h5>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-<!-- New User -->
-  <button class="btn" type="submit" ng-click='visible = !visible'>Create New User</button>
-    <div ng-show="visible">
-      <br>
-      <form name="newUser" ng-submit="$ctrl.addNewUser()">
-        <div class="name">
-          <div>Name<input type="text" ng-model="$ctrl.newUserFirstName" required></div>
+      <!-- New User -->
+      <button class="btn" type="submit" ng-click='visible = !visible'>Create New User</button>
+      <div ng-show="visible">
+        <br>
+          <div class="row">
+            <form class="col s12" name="newUser" ng-submit="$ctrl.addNewUser()">
+              <div class="row">
+                <div class="input-field col s6">
+        <!-- <div class="container"> -->
+        <!-- <div class="name"> 
+          <div class="input-field col s6">
+            Name
+            <input placeholder="Name" type="text" ng-model="$ctrl.newUserFirstName" required>
+          </div>
+
+
+          
           <div>Last Name <input type="text" ng-model="$ctrl.newUserLastName" required></div>
+          <br>
           <div>User Name<input name=userName type="text" ng-model="$ctrl.newUserUsername" required></div>
+
+
           <div>Email<input type="text" ng-model="$ctrl.newUserEmail" required></div>
         </div>
         <button class="btn" type="submit" ng-click='visible = !visible' ng-show='true' value="Add New User" >Submit</button>
-        
-      </form>
-    </div>
-    <div id='home-trivia'>
-    <p>Or try your hand at a random trivia question!</p>
-    <a ui-sref="trivia"><button class="btn">Test Yourself!</button></a>
+      </form> -->
+
+          <!-- <form name="newUser" ng-submit="$ctrl.addNewUser()"> -->
+                  
+                  <input id="first_name" type="text" class="validate" ng-model="$ctrl.newUserFirstName" required>
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate"  ng-model="$ctrl.newUserLastName" required>
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="user_name" type="text" class="validate" ng-model="$ctrl.newUserUsername" required>
+                  <label for="user_name">User Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="email" type="text" class="validate" ng-model="$ctrl.newUserEmail" required>
+                  <label for="email">Eail</label>
+                </div>
+              </div>
+              <button class="btn" type="submit" ng-click='visible = !visible' ng-show='true' value="Add New User" >Submit</button>
+            </form>
+          
+
+
+        </div>
+      </div>
+      <div id='home-trivia'>
+        <p>Or try your hand at a random trivia question!</p>
+        <a ui-sref="trivia"><button class="btn">Test Yourself!</button></a>
+      </div>
     </div>
 </div>
-</div>
-  </section>
+</section>
 </div>

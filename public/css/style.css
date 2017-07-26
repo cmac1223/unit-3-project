@@ -13,7 +13,12 @@ html {
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
+}
 
+html, 
+body {
+    font-family: "avenir next";
+    letter-spacing: 0.05em;
 }
 
 #trivia-trainer {
@@ -103,26 +108,33 @@ div.newuser {
    width:100%;
    background:#999;
 }
-     .card{
-     background-color: rgba(255,255,255,.05);  
+
+.card{
+     background-color: rgba(0, 0, 0, 0.75);  
+     text-align: left;
+     position: relative;
+     margin: .5em 0 1em 0;
+     padding-left: 0;
 }     
 
- #user-card {
-    min-height: 400px;
-    margin: 2vw;
-    padding: 10px;
-} 
-
-#user-show-card {
-    min-height: 400px;
-    margin: 2vw;
-    padding: 10px;
+#user-card {
+     background-color: rgba(0, 0, 0, 0.75);  
+     text-align: left;
+     position: relative;
+     margin: .5em 0 1em 0;
+     padding-left:15%;
 }
-
-#trivia-card {
-    min-height: 400px;
+    /* min-height: 400px;
     margin: 0 10vw 2vw 10vw;
     padding: 10px;
+} */
+
+ form {
+    color: white;
+}
+
+.question-box {
+    text-align: left;
 }
 
 .name {
@@ -258,6 +270,11 @@ div.newuser {
 #question-delete-container p:hover {
     color: rgba(215,0,0,.8);
 }
+
+/* .card {
+    background-color: rgba(255, 255, 255, 0.3);
+} */
+
 
     @media all and (max-width: 500px) {
 

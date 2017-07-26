@@ -1,22 +1,38 @@
+<!-- <style>
+  .question-box {
+    text-align: left;
+  }
+
+</style> -->
+
 <div>
   <section id="trivia">
 
-    <h3>TEST YOUR KNOWLEDGE</h3>
 <!--random trivia question generator-->
-<div class='card', id='trivia-card'>
-    <span ng-click='visible = false'>
-  <button class="btn" id='get-a-question' ng-click='$ctrl.getTrivia()'>Get A Question</button>
-</span>
-    <ul>
-      <li><h5>TOPIC: {{$ctrl.trivia.category.title | uppercase}}</h5></li>
-      <br>
-      <li><h5>Question: {{$ctrl.trivia.question}}</h5></li>
-      <br>
-      <button class="btn" ng-click="visible = !visible">Toggle Answer</button>
-      <br>
-      <br>
-      <li ng-show="visible = visible"><h5>Answer: {{$ctrl.trivia.answer}}</h5></li>
-    </ul>
+<div class="container">
+  <div class="row question-box">
+    <h3>TEST YOUR KNOWLEDGE</h3>
+    <hr>
+    <div class='card', id='trivia-card'>
+        <ul>
+          <li><h5>TOPIC: {{$ctrl.trivia.category.title | uppercase}}</h5></li>
+          <br>
+          <li><h5>Question: {{$ctrl.trivia.question}}</h5></li>
+          <br>
+          <br>
+          <br>
+        
+        <div class="question-buttons">
+          <span ng-click='visible = false'>
+            <button class="btn" id='get-a-question' ng-click='$ctrl.getTrivia()'>Get A Question</button>
+          </span>          
+          <button class="btn" ng-click="visible = !visible">Toggle Answer</button>
+        </div>
+        <li ng-show="visible = visible"><h5>Answer: {{$ctrl.trivia.answer}}</h5></li>
+      
+        </ul>
+    </div>
+    </div>
 </div>
 <p class='https-warning'>If Questions Are Not Loading Please Remove the "S" From the HTTPS in the URL</p>
   </section>
