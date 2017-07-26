@@ -15,7 +15,7 @@ https://trello.com/b/nkIuZSnO/wdi-project-3
 
 Heroku
 
-https://trivia-trainer11.herokuapp.com/#!/users
+http://trivia-trainer11.herokuapp.com/#!/users
 
 
 
